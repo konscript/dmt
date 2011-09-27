@@ -15,9 +15,6 @@ $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $b
 // Load compass tools, utilities and blueprint modules
 @import "blueprint";
 @import "blueprint/reset";
-@import "compass/typography/text/replacement";
-@import "compass/utilities/general/clearfix";
-@import "compass/css3/opacity";
 
 // Global constants and variables goes here (re-usable colors, default sizes etc.)
 
