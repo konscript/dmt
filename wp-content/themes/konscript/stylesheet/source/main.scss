@@ -31,13 +31,23 @@ body {}
  ************************************************/
 
 // Contains entire header
-#header-container {}
+#header-container {
+	@include container;
+}
 	#header {}
 
 		// Site title
-		#site-title {}
-			#site-title a {}
-				#site-title a span {}
+		#site-logo {
+			@include column(11);
+			@include prepend(1);
+		}
+			#site-logo a {}
+				#site-logo a img {}
+		
+		#site-sponsors {
+			@include column(11, true);
+			@include append(1);
+		}
 
 		// Site description/tagline
 		#site-description {}
@@ -47,24 +57,39 @@ body {}
 	 ************************************************/
 
 	// Wrapper for entire menu area
-	#primary-menu {}
+	#primary-menu {
+		@include column(24);
+	}
 
 		// Wrapper for unordered list of menu items
-		#primary-menu div.menu {}
+		#primary-menu div.menu { 
+			border-radius: 5px;
+			background-color: #CCCCCC;
+		}
 
 			// Menu list.
 			#primary-menu ul {}
-				#primary-menu li {}
-					#primary-menu li a {}
-				#primary-menu li.current-menu-item {}
+				#primary-menu li { display: inline; }
+					#primary-menu li a { 
+						text-decoration: none;
+						color: #000;
+						padding: 25px;
+					}
+				#primary-menu li.current-menu-item { }
 
 /**
  * 3. Content
  ************************************************/
 
 // Contains site's main content
-#content-container {}
-	#content {}
+#content-container {
+	@include container;
+	@include column(22);
+	@include prepend(1);
+	@include append(1);
+}
+	#content {
+	}
 
 		// Breadcrumb trail
 		.breadcrumb {}
@@ -91,7 +116,8 @@ body {}
 		// Entry wrapper <div>
 		.hentry {}
 		.post {}
-		.page {}
+		.page {
+		}
 
 			// Post, page, and 404 page titles
 			.entry-title {}
@@ -212,7 +238,9 @@ body {}
 			.widget-title {}
 
 	// Primary widget section
-	#sidebar-primary {}
+	#sidebar-primary {
+
+	}
 		#sidebar-primary .widget {}
 			#sidebar-primary .widget-inside {}
 				#sidebar-primary .widget-title {}
@@ -224,8 +252,13 @@ body {}
  ************************************************/
 
 // Wrapper for the entire footer
-#footer-container {}
-	#footer {}
+#footer-container {
+	width: 100%;
+	background-color: gray;
+}
+	#footer {
+		@include container;
+	}
 
 		// Footer extra
 		#footer .copyright {}
