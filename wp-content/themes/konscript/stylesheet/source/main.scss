@@ -35,9 +35,10 @@ body {}
 	#header {}
 
 		// Site title
-		#site-title {}
-			#site-title a {}
-				#site-title a span {}
+		#site-title {
+			a {}
+				a span {}
+		}
 
 		// Site description/tagline
 		#site-description {}
@@ -47,17 +48,18 @@ body {}
 	 ************************************************/
 
 	// Wrapper for entire menu area
-	#primary-menu {}
+	#primary-menu {
 
 		// Wrapper for unordered list of menu items
-		#primary-menu div.menu {}
+		div.menu {}
 
 			// Menu list.
-			#primary-menu ul {}
-				#primary-menu li {}
-					#primary-menu li a {}
-				#primary-menu li.current-menu-item {}
-
+			ul {}
+				li {}
+					li a {}
+				li.current-menu-item {}
+		}
+		
 /**
  * 3. Content
  ************************************************/
@@ -123,17 +125,19 @@ body {}
 			.series-title {}
 
 		// Navigation links
-		.navigation-links {}
-			.navigation-links .previous {}
-			.navigation-links .next {}
+		.navigation-links {
+			.previous {}
+			.next {}
+		}
 
 		// WP PageNavi (plugin)
-		.wp-pagenavi {}
-			.wp-pagenavi .pages {}
-			.wp-pagenavi .current {}
-			.wp-pagenavi .extend {}
-			.wp-pagenavi a {}
-
+		.wp-pagenavi {
+			.pages {}
+			.current {}
+			.extend {}
+			a {}
+		}
+		
 		// Attachment image navigation
 		.navigation-attachment {}
 
@@ -152,31 +156,32 @@ body {}
 		p.comments-closed {}
 
 			// Main comments section
-			#comments {}
-				#comments ol {}
+			#comments {
+				ol {}
 
 					// Individual comments (note that WordPress has even/odd backwards)
-					#comments li {}
-						#comments li li {}
-							#comments li li li {}
-								#comments li li li li {}
-					#comments li.even {}
-					#comments li.odd {}
-					#comments li.thread-even {}
-					#comments li.thread-odd {}
-					#comments li.author {}
-					#comments li.trackback {}
-					#comments li.pingback {}
+					li {}
+						li li {}
+							li li li {}
+								li li li li {}
+					li.even {}
+					li.odd {}
+					li.thread-even {}
+					li.thread-odd {}
+					li.author {}
+					li.trackback {}
+					li.pingback {}
 
 						// Comment avatars
-						#comments .avatar {}
+						.avatar {}
 
 						// Comment metadata
-						#comments .comment-meta {}
-							#comments .comment-meta cite {}
+						.comment-meta {}
+							.comment-meta cite {}
 
 						// Comment text
-						#comments .comment-text {}
+						.comment-text {}
+			}
 
 				// Paged comments navigation
 				#comments-template .paged-navigation {}
@@ -212,12 +217,13 @@ body {}
 			.widget-title {}
 
 	// Primary widget section
-	#sidebar-primary {}
-		#sidebar-primary .widget {}
-			#sidebar-primary .widget-inside {}
-				#sidebar-primary .widget-title {}
-				#sidebar-primary .widget ul {}
-					#sidebar-primary .widget ul li {}
+	#sidebar-primary {
+		.widget {}
+			.widget-inside {}
+				.widget-title {}
+				.widget ul {}
+					.widget ul li {}
+	}
 
 /**
  * 4. Footer
@@ -225,11 +231,12 @@ body {}
 
 // Wrapper for the entire footer
 #footer-container {}
-	#footer {}
+	#footer {
 
 		// Footer extra
-		#footer .copyright {}
-		#footer .credit {}
+		.copyright {}
+		.credit {}
+	}
 		
 /**
  * 5. Elements (default styling)
