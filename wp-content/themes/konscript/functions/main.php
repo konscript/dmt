@@ -211,7 +211,7 @@ function site_title() {
 	$tag = ( is_front_page() ) ? 'h1' : 'div';
 
 	if ( $title = get_bloginfo( 'name' ) )
-		$title = '<' . $tag . ' id="site-title"><a href="' . home_url() . '" title="' . esc_attr( $title ) . '" rel="home"><span>' . $title . '</span></a></' . $tag . '>';
+		$title = '<' . $tag . ' id="site-logo"><a href="' . home_url() . '" title="' . esc_attr( $title ) . '" rel="home"><img src="'.   get_bloginfo ('template_url') .'/graphics/logo.png"></img></a></' . $tag . '>';
 
 	echo apply_atomic( 'site_title', $title );
 }
@@ -221,10 +221,7 @@ function site_title() {
  * On other pages, wrap it in a <div> element.
  */
 function site_description() {
-	$tag = ( is_front_page() ) ? 'h2' : 'div';
-
-	if ( $desc = get_bloginfo( 'description' ) )
-		$desc = "\n\t\t\t" . '<' . $tag . ' id="site-description"><span>' . $desc . '</span></' . $tag . '>' . "\n";
+	$desc = '<div id="site-sponsors">Sponsors go here!</div>';
 
 	echo apply_atomic( 'site_description', $desc );
 }
