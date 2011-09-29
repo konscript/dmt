@@ -84,11 +84,11 @@ body {}
 // Contains site's main content
 #content-container {
 	@include container;
-	@include column(22);
-	@include prepend(1);
-	@include append(1);
 }
 	#content {
+		@include column(22);
+		@include prepend(1);
+		@include append(1);		
 	}
 
 		// Breadcrumb trail
@@ -125,6 +125,10 @@ body {}
 			.page-title {}
 			.attachment-title {}
 			.error-404-title {}
+
+			.entry-title a {
+				font-family: "Futura";
+			}
 
 			// Author and date byline
 			.byline {}
