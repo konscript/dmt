@@ -65,7 +65,7 @@ body {}
 		@include column(24, true);
 		margin-top: 10px;
 	}
-
+		
 		// Wrapper for unordered list of menu items
 		#primary-menu div.menu { 
 			@include background-image(linear-gradient(white, #d6d6d6));
@@ -84,7 +84,7 @@ body {}
 			}
 				#primary-menu li { 
 					float: left;
-					margin-top: 10px;
+					margin: 10px 0px 10px 0px;
 					width: 12%;
 					text-align: center;
 				}
@@ -99,18 +99,19 @@ body {}
 				#primary-menu ul ul {
 					position: absolute;
 					list-style-type: none;
-					margin-top: 10px;
 					width: 100%;
 					overflow: auto;
+					margin: 10px 0 0 0;
 					padding: 0;
-					margin: 0;
 					//background-color: #EEE;
 					//border: 1px solid #AAA;					
 				}
 				#primary-menu ul ul li {
 					text-align: left;
+					margin: 0px;
+					padding: 2px 0 2px 10px;
 					&:hover {
-						list-style-type: disc;
+						background-color: #DDD;
 					}
 				}
 
