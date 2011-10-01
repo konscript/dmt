@@ -29,6 +29,10 @@
 			<div id="header">
 				<?php do_atomic( 'header' ); // hybrid_header ?>
 				<?php get_template_part( 'menu', 'primary' ); ?>
+				<div id="banner-container">
+					<div id="banner">
+					</div>
+				</div>
 			</div><!-- #header -->
 		</div><!-- #header-container -->
 

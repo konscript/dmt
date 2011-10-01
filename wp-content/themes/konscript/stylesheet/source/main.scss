@@ -33,14 +33,18 @@ body {}
 // Contains entire header
 #header-container {
 	@include container;
+	margin-top: 20px;
 }
 	#header {}
 
 		// Site title
 		#site-logo {
 			@include column(11);
-			@include prepend(1);
-		}
+			@include prepend(1); }
+
+		h1#site-logo {
+			margin-bottom: 0; }
+		
 			#site-logo a {}
 				#site-logo a img {}
 		
@@ -58,15 +62,20 @@ body {}
 
 	// Wrapper for entire menu area
 	#primary-menu {
-		@include column(24);
+		@include column(24, true);
+		margin-top: 10px;
 	}
 
 		// Wrapper for unordered list of menu items
 		#primary-menu div.menu { 
-			background: url('../../graphics/primary-menu_bg.png');
-			background-repeat: repeat-x;
-			border-radius: 5px;
-			height: 45px;
+			@include background-image(linear-gradient(white, #d6d6d6));
+			//background: url('../../graphics/primary-menu_bg.png');
+			//background-repeat: repeat-x;
+			border-radius: 4px;
+			border: 1px solid #bcbcbc;
+			height: 38px;
+			margin: 0;
+			padding: 0;		
 		}
 
 			// Menu list.
@@ -81,18 +90,22 @@ body {}
 				}
 					#primary-menu li a {
 						text-decoration: none;
-						font-size: 1.2em;
+						font-size: 1.083em; //13px
+						font-weight: bold;
 						color: #000;
 					}
 				#primary-menu li.current-menu-item { }
 				
 				#primary-menu ul ul {
+					position: absolute;
 					list-style-type: none;
 					margin-top: 10px;
-					background-color: #EEE;
-					border: 1px solid #AAA;
 					width: 100%;
 					overflow: auto;
+					padding: 0;
+					margin: 0;
+					//background-color: #EEE;
+					//border: 1px solid #AAA;					
 				}
 				#primary-menu ul ul li {
 					text-align: left;
@@ -100,6 +113,23 @@ body {}
 						list-style-type: disc;
 					}
 				}
+
+	/**
+	 * 2.2 Banner
+	 ************************************************/
+
+	// Wrapper for entire menu area
+	#banner-container {
+		@include prepend(1);
+		@include column(22);
+		@include append(1);
+	}
+		
+		#banner {
+			@include single-box-shadow(#000, 0, 5px, 10px, -10px, true);
+			background-color: #dddddd;			
+			height: 100px;
+		}
 
 /**
  * 3. Content

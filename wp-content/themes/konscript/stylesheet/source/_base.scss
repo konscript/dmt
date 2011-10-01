@@ -16,9 +16,11 @@ $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $b
 @import "blueprint";
 @import "blueprint/reset";
 @import "compass/css3/font-face";
+@import "compass/css3/images";
+@import "compass/css3/box-shadow";
 
 // Custom font setup (CSS3 font-face)
-@include font-face("Futura", font-files("../../futura.ttf", truetype, "../../futura.otf", opentype, "../../futura.svg", svg));
+@include font-face("Futura", font-files("../../../other/futura.ttf", truetype, "../../../other/futura.otf", opentype, "../../../other/futura.svg", svg));
 
 // Global constants and variables goes here (re-usable colors, default sizes etc.)
 
