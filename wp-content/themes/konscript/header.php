@@ -22,14 +22,15 @@
 	<?php wp_head(); // wp_head ?>
 	
 </head>
-<body class="bp <?php hybrid_body_class(); ?> <?php echo 'dmt-area-' . dmt_area(); ?>">
+<body class="bp <?php hybrid_body_class(); ?> <?php echo 'dmt-area-' . get_area(); ?>">
+	<div id="body-container">
+		<div id="body-wrapper">
+			<div id="header-container">
+				<div id="header">
+					<?php do_atomic( 'header' ); // hybrid_header ?>
+					<?php get_template_part( 'menu-general' ); ?>				
+					<?php get_template_part( 'menu-primary' ); ?>
+				</div><!-- #header -->
+			</div><!-- #header-container -->
 
-	<div id="body-wrapper">
-		<div id="header-container">
-			<div id="header">
-				<?php do_atomic( 'header' ); // hybrid_header ?>
-				<?php get_template_part( 'menu', 'primary' ); ?>
-			</div><!-- #header -->
-		</div><!-- #header-container -->
-
-		<div id="content-container">
+			<div id="content-container">

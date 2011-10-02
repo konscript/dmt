@@ -83,7 +83,6 @@ function hybrid_theme_setup_theme() {
  * theme.
  */
 function hybrid_theme_register_sidebars() {
-
 	/* Register the 404 template sidebar. */
 	register_sidebar(
 		array(
@@ -102,6 +101,7 @@ function hybrid_theme_register_sidebars() {
  * Registers main menus
  */
 function hybrid_theme_register_menus() {
+	register_nav_menu( 'area', __( 'Area Topmenu', hybrid_get_textdomain() ) );
 	register_nav_menu( 'general', __( 'General Topmenu', hybrid_get_textdomain() ) );
 	register_nav_menu( 'tools', __( 'Tools Topmenu', hybrid_get_textdomain() ) );
 	register_nav_menu( 'materials', __( 'Materials Topmenu', hybrid_get_textdomain() ) );		
@@ -236,41 +236,6 @@ function site_description() {
 	$desc = '<div id="site-sponsors">Sponsors go here!</div>';
 
 	echo apply_atomic( 'site_description', $desc );
-}
-
-/**
- * Retrieves the current DMT area scope for the page/post (or reverts to general if not applicable)
- */
-function dmt_area($post_id = false) {
-	if ( is_singular() ) {
-		if (!$post_id) {
-			global $wp_query;
-			$post_id = $wp_query->post->ID;
-		}
-		$post = get_post($post_id);
-		$meta = get_post_meta($post->ID, 'dmt-area');
-		if(empty($meta)) {
-			$meta = get_post_meta($post->post_parent, 'dmt-area');
-			if (empty($meta)) {
-				$parentpost = get_post($post->post_parent);
-				$found = false;
-				while($found == false) {
-					$meta = get_post_meta($parentpost->post_parent, 'dmt-area');
-					if (!empty($meta)) {
-						$found = true;
-					} else {
-						$parentpost = get_post($parentpost->post_parent);
-					}
-				}
-			}
-		}
-	}
-	if (empty($meta)) {
-		$meta = "General";
-	} else if (is_array($meta)) {
-		$meta = $meta[0];
-	}
-	return strtolower($meta);
 }
 
 ?>

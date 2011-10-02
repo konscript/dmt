@@ -15,21 +15,25 @@ $blueprint-font-size: 12px;
 body.bp {
   @include blueprint-utilities;
   @include blueprint-debug;
-  @include blueprint-interaction;
-}
+  @include blueprint-interaction; }
 
 // Default blueprint setup for forms
 form.bp {
-  @include blueprint-form;
-}
+  @include blueprint-form; }
 
 /**
  * 1. Body
  ************************************************/
 
-// Contains everything
-body {}
-	#body-wrapper {}
+// Height declared explicitly for sticky footer (http://localhost:8888/projects/dmt/materialer)
+html, 
+body, 
+#body-container { 
+	height: 100%; }
+
+	// Wrapper for sticky footer
+	#body-wrapper {
+		min-height: 100%; }
 
 /**
  * 2. Header
@@ -38,8 +42,8 @@ body {}
 // Contains entire header
 #header-container {
 	@include container;
-	margin-top: 20px;
-}
+	padding-top: 20px; }
+	
 	#header {}
 
 		// Site title
@@ -56,32 +60,50 @@ body {}
 		#site-sponsors {
 			@include column(11, true);
 			@include append(1);
-		}
-
-		// Site description/tagline
-		#site-description {}
+			display: none; }
 
 	/**
 	 * 2.1 Primary Menu
 	 ************************************************/
 
+	$menu-selected-primary: blue;
+	$menu-selected-area: red;
+	$menu-selected-general: blue;
+
+	#general-menu-container {
+		@include column(11, true);
+		@include append(1); }
+
+		#general-menu {
+			
+			> ul {
+				padding: 0;
+				float: right; }
+			
+				> li {
+					margin: 10px 0px 10px 20px;
+					padding: 0; }
+					
+		}	
+
 	// Wrapper for entire menu area
-	#primary-menu {
+	#top-menu-container {
 		@include column(24, true);
-		margin-top: 10px;
+		margin-top: 10px; }
+	
+	.menu-container {
 	
 		// Wrapper for unordered list of menu items
-		div.menu { 
+		#top-menu { 
 			@include border-radius(4px);
 			@include background-image(linear-gradient(#fff, #d6d6d6));
 			//background: url('../../graphics/primary-menu_bg.png');
 			//background-repeat: repeat-x;
 			border: 1px solid #bcbcbc;
-			height: 38px;
+			height: 40px;
 			margin: 0;
-			padding: 0;		
-		}
-
+			padding: 0; }
+		
 			// Menu list.
 			ul {
 				list-style-type: none;
@@ -90,7 +112,8 @@ body {}
 				
 				li { 
 					float: left;
-					margin: 10px 20px 10px 0;
+					margin: 0;
+					padding: 11px 20px 0 0;
 					text-align: center; }
 					
 					li a {
@@ -98,30 +121,26 @@ body {}
 						font-size: 1.083em; //13px
 						font-weight: bold;
 						color: #000;
+						@include transition-property(color);
+						@include transition-duration(0.5s);
 						&:hover {
-							color: #0079c2;
-						}
+							color: #0079c2; }
 					}
 					
 					li.current-menu-item > a,
 					li.current_page_parent > a {
-						color: #0079c2;
-					}
+						color: #0079c2; }
+						
+						li a .sf-sub-indicator {
+							@include replace-text('../graphics/primary-menu_sub-indicator.png');
+							float: left;
+							margin-right: 4px; }
+						
+					li .separator {
+						margin-left: 20px; }
 					
-					li.menu-area {
-						float: right;
-						> a {						
-							color: gray; 
-							&:hover {
-								color: red; }
-							}
-						}
-
-					li.current-menu-area {
-						float: right;
-						> a {
-							color: red; }
-						}					
+					li.no-separator .separator {
+						display: none; }			
 				
 				ul ul {
 					@include border-radius(4px);
@@ -130,16 +149,49 @@ body {}
 					list-style-type: none;
 					width: 100%;
 					overflow: hidden;
-					margin: 5px 0 0 -10px;
-					padding: 5px 0 5px 0;
-					background-color: #eaeaea;
-					border: 1px solid #bcbcbc;					
+					margin: 35px 0 0 0;
+					padding: 5px 0 5px 5px;
+					background-color: #fff;
+					border: 1px solid #bcbcbc; }
+
+					ul ul li {
+						text-align: left;
+						margin: 0px;
+						padding: 5px 0 5px 5px; }
+
+					ul ul li .separator {
+						display: none; }
+
+				.area-menu li {
+					float: right;
+					margin: 0;
+					padding: 11px 20px 10px 20px;
+					border-left: 1px solid #bcbcbc;					
+					> a {						
+						color: gray; 
+						&:hover {
+							color: red; }
+						}
+					}
+
+				.area-menu li.current_page_item,
+				.area-menu li.current_page_parent {
+					> a {
+						color: $menu-selected-area; }
 				}
-				ul ul li {
-					text-align: left;
-					margin: 0px;
-					padding: 5px 0 5px 10px;
-				}
+				
+		}
+
+	body.dmt-area-materials #top-menu-container li.materials-area,
+	body.dmt-area-tools #top-menu-container li.tools-area	{
+		> a {
+			color: $menu-selected-area; }
+	}
+	
+	body.home #top-menu-container li.materials-area,
+	body.home #top-menu-container li.tools-area {
+		> a {
+			color: gray; }
 	}
 
 	/**
@@ -150,8 +202,13 @@ body {}
 	#banner-container {
 		@include column(22, true); }
 		
+	body.home #banner-container {
+		@include column(24, true);
+		margin-left: -($blueprint-grid-width + $blueprint-grid-margin); }
+		
 		#banner {
-			@include single-box-shadow(#000, 0, 5px, 10px, -10px, true);
+			@include single-box-shadow(#000, 0, 7px, 10px, -10px, true);
+			@include border-bottom-radius(4px);
 			background-position: center bottom;
 			background-color: #dddddd;			
 			height: 100px; }
@@ -162,6 +219,14 @@ body {}
 		body.dmt-area-materials #banner {
 			background-image: url('../../graphics/materials_banner-texture.png'); }
 
+		body.home #banner {
+			background-image: url('../../graphics/home_banner-texture.png');
+			background-color: transparent;
+			background-position: left top;
+			box-shadow: none;
+			width: 100%;
+			height: 278px; }
+
 
 /**
  * 3. Content
@@ -170,12 +235,13 @@ body {}
 // Contains site's main content
 #content-container {
 	@include container;
-}
+	overflow:auto;
+	padding-bottom: 80px; }
+	
 	#content {
 		@include prepend(1);
 		@include column(22);
-		@include append(1);		
-	}
+		@include append(1); }
 
 		// Breadcrumb trail
 		.breadcrumb {}
@@ -206,7 +272,7 @@ body {}
 
 			// Post, page, and 404 page titles
 			.entry-title {
-				padding: 15px;
+				padding: 45px 0 0 20px;
 			}
 			.post-title {}
 			.page-title {}
@@ -214,17 +280,20 @@ body {}
 			.error-404-title {}
 
 			.entry-title a {
-				font-family: "Futura";
+				@include single-text-shadow(white, -1px, 0, 0);
+				font-family: $customfont;
 				text-transform: uppercase;
 				color: #000;
 				text-decoration: none;
-			}
+				font-size: 28px; }
 
 			// Author and date byline
 			.byline {}
 
 			// Full entries
-			.entry-content {}
+			.entry-content {
+				@include column(22, true);
+				padding: 20px 0 20px 0; }
 
 			// Excerpts (introduced)
 			.entry-summary {}
@@ -351,12 +420,29 @@ body {}
 #footer-container {
 	width: 100%;
 	background-color: #dddddd;
-}
+	background-position: center bottom; 
+	margin-top: -80px;
+	height: 80px; }
+	
+	body.dmt-area-tools #footer-container {
+		background-image: url('../../graphics/tools_footer-texture.png'); }
+
+	body.dmt-area-materials #footer-container {
+		background-image: url('../../graphics/materials_footer-texture.png'); }
+
+	body.home #footer-container {
+		background-image: none; }	
+	
 	#footer {
 		@include container;
-		// Footer extra
-		.copyright {}
-		.credit {}
+		padding-top: 10px;
+	
+		> span,
+		.breadcrumb {
+			@include prepend(1);
+			@include column(22, true);
+			@include append(1);			
+		}
 	}
 		
 /**

@@ -9,16 +9,14 @@
  */
 ?>
 
-	<?php get_sidebar( 'primary' ); ?>
+		<?php get_sidebar( 'primary' ); ?>
 
-	</div><!-- #container -->
+		</div><!-- #content-container -->
+	</div><!-- #body-wrapper -->
 	<div id="footer-container">
 		<div id="footer">
-			<?php
-			$footer_insert = hybrid_get_setting( 'footer_insert' );
-			if ( !empty( $footer_insert ) )
-				echo '<div class="footer-insert">' . do_shortcode( $footer_insert ) . '</div>';
-			?>
+			<span>Dansk Materiale Teknik A/S  |  Smedeholm 8, DK-2730 Herlev, Danmark</span>
+			<span>CVR: 25063481  |  dmt@dmtas.dk  |  +45 70201601</span>
 			<?php do_atomic( 'breadcrumb' ); // breadcrumb trail ?>
 		</div><!-- #footer -->
 	</div><!-- #footer-container -->

@@ -8,23 +8,14 @@
 
 //if ( has_nav_menu( 'primary' ) ) : ?>
 
-	<div id="top-menu-container" class="menu-container">
-		<div id="top-menu" class="menu">
+	<div id="general-menu-container" class="menu-container">
+		<div id="general-menu" class="menu">
 		<?php 
-		if (!is_front_page()) {
 		echo wp_nav_menu(array( 
-			'theme_location' 	=> get_area(), 
+			'theme_location' 	=> 'general', 
 			'container' 			=> false, 
-			'menu_class' 			=> 'primary-menu',
+			'menu_class' 			=> 'general-menu',
 			'after'           => '<span class="separator">•</span>',
-			'fallback_cb' 		=> ''));
-		}
-		?>
-		<?php
-		echo wp_nav_menu(array( 
-			'theme_location' 	=> 'area', 
-			'container' 			=> false, 
-			'menu_class' 			=> 'area-menu',
 			'fallback_cb' 		=> ''));
 		?>
 		</div>

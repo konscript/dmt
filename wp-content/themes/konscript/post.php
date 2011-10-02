@@ -1,6 +1,6 @@
 <?php
 /**
- * Post Template: Default Post
+ * Default post template
  */
 
 get_header(); // Loads the header.php template. ?>
