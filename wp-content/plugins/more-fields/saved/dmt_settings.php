@@ -1,0 +1,4 @@
+<?php 
+add_filter('more_fields_saved', 'more_fields_saved_dmt_settings');
+function more_fields_saved_dmt_settings ($d) { $d['dmt-settings'] = maybe_unserialize('a:7:{s:5:"label";s:12:"DMT Settings";s:8:"position";s:4:"left";s:5:"index";s:12:"dmt-settings";s:12:"ancestor_key";s:0:"";s:6:"fields";a:1:{s:4:"area";a:8:{s:5:"label";s:4:"Area";s:3:"key";s:8:"dmt-area";s:4:"slug";s:0:"";s:10:"field_type";s:5:"radio";s:6:"values";s:25:"General, Tools, Materials";s:7:"caption";s:122:"Choose the page's area scoping for styling, menu's and more. If none is selected, it's parent will be used.";s:5:"index";s:4:"area";s:12:"ancestor_key";s:0:"";}}s:15:"more_access_cap";a:4:{i:0;s:13:"administrator";i:1;s:6:"editor";i:2;s:6:"author";i:3;s:11:"contributor";}s:10:"post_types";a:1:{i:0;s:4:"page";}}', true); return $d; }
+?>
