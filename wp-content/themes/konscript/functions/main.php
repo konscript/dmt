@@ -24,17 +24,17 @@ function hybrid_theme_setup_theme() {
 	$prefix = hybrid_get_prefix();
 
 	/* Add support for framework features. */
-	add_theme_support( 'hybrid-core-menus', array( 'primary' ) );
+	add_theme_support( 'hybrid-core-menus' );
 	add_theme_support( 'hybrid-core-sidebars', array( 'primary' ) );
-	add_theme_support( 'hybrid-core-widgets' );
+	//add_theme_support( 'hybrid-core-widgets' );
 	add_theme_support( 'hybrid-core-shortcodes' );
-	add_theme_support( 'hybrid-core-post-meta-box' );
-	add_theme_support( 'hybrid-core-theme-settings' );
+	//add_theme_support( 'hybrid-core-post-meta-box' );
+	//add_theme_support( 'hybrid-core-theme-settings' );
 	add_theme_support( 'hybrid-core-meta-box-footer' );
 	add_theme_support( 'hybrid-core-drop-downs' );
 	add_theme_support( 'hybrid-core-seo' );
 	add_theme_support( 'hybrid-core-template-hierarchy' );
-	add_theme_support( 'hybrid-core-deprecated' );
+	//add_theme_support( 'hybrid-core-deprecated' );
 
 	/* Add support for framework extensions. */
 	add_theme_support( 'breadcrumb-trail' );
@@ -47,6 +47,7 @@ function hybrid_theme_setup_theme() {
 
 	/* Register sidebars. */
 	add_action( 'init', 'hybrid_theme_register_sidebars', 11 );
+	add_action( 'init', 'hybrid_theme_register_menus', 12 );
 
 	/* Header actions. */
 	add_action( "{$prefix}_header", 'site_title' );
@@ -98,6 +99,15 @@ function hybrid_theme_register_sidebars() {
 }
 
 /**
+ * Registers main menus
+ */
+function hybrid_theme_register_menus() {
+	register_nav_menu( 'general', __( 'General Topmenu', hybrid_get_textdomain() ) );
+	register_nav_menu( 'tools', __( 'Tools Topmenu', hybrid_get_textdomain() ) );
+	register_nav_menu( 'materials', __( 'Materials Topmenu', hybrid_get_textdomain() ) );		
+}
+
+/**
  * Function for adding Hybrid theme <body> classes.
  */
 function hybrid_theme_body_class( $classes ) {
@@ -138,14 +148,16 @@ function hybrid_theme_body_class( $classes ) {
  */
 function hybrid_breadcrumb() {
 	if ( current_theme_supports( 'breadcrumb-trail' ) )
-		breadcrumb_trail( array( 'front_page' => false ) );
+		breadcrumb_trail( array( 'front_page' => false, 'show_home' => false ) );
 }
 
 /**
  * Displays the post title.
  */
 function hybrid_entry_title() {
+	echo '<div id="banner-container"><div id="banner">';	
 	echo apply_atomic_shortcode( 'entry_title', '[entry-title]' );
+	echo '</div></div>';
 }
 
 /**
@@ -226,5 +238,39 @@ function site_description() {
 	echo apply_atomic( 'site_description', $desc );
 }
 
+/**
+ * Retrieves the current DMT area scope for the page/post (or reverts to general if not applicable)
+ */
+function dmt_area($post_id = false) {
+	if ( is_singular() ) {
+		if (!$post_id) {
+			global $wp_query;
+			$post_id = $wp_query->post->ID;
+		}
+		$post = get_post($post_id);
+		$meta = get_post_meta($post->ID, 'dmt-area');
+		if(empty($meta)) {
+			$meta = get_post_meta($post->post_parent, 'dmt-area');
+			if (empty($meta)) {
+				$parentpost = get_post($post->post_parent);
+				$found = false;
+				while($found == false) {
+					$meta = get_post_meta($parentpost->post_parent, 'dmt-area');
+					if (!empty($meta)) {
+						$found = true;
+					} else {
+						$parentpost = get_post($parentpost->post_parent);
+					}
+				}
+			}
+		}
+	}
+	if (empty($meta)) {
+		$meta = "General";
+	} else if (is_array($meta)) {
+		$meta = $meta[0];
+	}
+	return strtolower($meta);
+}
 
 ?>

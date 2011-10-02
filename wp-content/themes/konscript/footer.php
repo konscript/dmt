@@ -19,6 +19,7 @@
 			if ( !empty( $footer_insert ) )
 				echo '<div class="footer-insert">' . do_shortcode( $footer_insert ) . '</div>';
 			?>
+			<?php do_atomic( 'breadcrumb' ); // breadcrumb trail ?>
 		</div><!-- #footer -->
 	</div><!-- #footer-container -->
 </div><!-- #body-container -->

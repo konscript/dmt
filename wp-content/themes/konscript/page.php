@@ -4,9 +4,7 @@
  */
 
 get_header(); // Loads the header.php template. ?>
-
 	<div id="content" class="hfeed content">
-		<?php do_atomic( 'breadcrumb' ); // breadcrumb trail ?>
 		
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

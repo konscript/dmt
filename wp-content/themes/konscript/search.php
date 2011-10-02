@@ -4,14 +4,10 @@
  *
  * The search template is loaded when a visitor uses the search form to search for something
  * on the site.
- *
- * @package Hybrid
- * @subpackage Template
  */
 
 get_header(); // Loads the header.php template. ?>
 	<div id="content" class="hfeed content">
-		<?php do_atomic( 'before_content' ); // hybrid_before_content ?>
 		<?php get_template_part( 'loop-meta' ); // Loads the loop-meta.php template. ?>
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -32,6 +28,5 @@ get_header(); // Loads the header.php template. ?>
 
 		<?php endif; ?>
 
-		<?php do_atomic( 'after_content' ); // hybrid_after_content ?>
 	</div><!-- .content .hfeed -->
 <?php get_footer(); // Loads the footer.php template. ?>

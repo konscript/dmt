@@ -5,7 +5,6 @@
 
 get_header(); // Loads the header.php template. ?>
 	<div id="content" class="hfeed content">
-		<?php do_atomic( 'breadcrumb' ); // breadcrumb trail ?>
 		
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -20,7 +19,7 @@ get_header(); // Loads the header.php template. ?>
 			<?php comments_template( '/comments.php', true ); // Loads the comments.php template ?>
 
 			<?php endwhile; ?>
-		<?php else : ?>
+		<?php else: ?>
 
 			<?php get_template_part( 'loop-error' ); // Loads the loop-error.php template. ?>
 

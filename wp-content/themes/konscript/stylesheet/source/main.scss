@@ -2,12 +2,17 @@
  * Main (main.scss)
  */
 
-// Load the base
+// Load the WP defaults and base
+@import "_wordpress";
 @import "_base";
+
+// Typography setup
+$blueprint-font-family: Arial, Helvetica, sans-serif;
+$blueprint-font-size: 12px;
+@include blueprint-typography(false);
 
 // Default blueprint setup on the body
 body.bp {
-  @include blueprint-typography(true);
   @include blueprint-utilities;
   @include blueprint-debug;
   @include blueprint-interaction;
@@ -64,14 +69,13 @@ body {}
 	#primary-menu {
 		@include column(24, true);
 		margin-top: 10px;
-	}
-		
+	
 		// Wrapper for unordered list of menu items
-		#primary-menu div.menu { 
-			@include background-image(linear-gradient(white, #d6d6d6));
+		div.menu { 
+			@include border-radius(4px);
+			@include background-image(linear-gradient(#fff, #d6d6d6));
 			//background: url('../../graphics/primary-menu_bg.png');
 			//background-repeat: repeat-x;
-			border-radius: 4px;
 			border: 1px solid #bcbcbc;
 			height: 38px;
 			margin: 0;
@@ -79,41 +83,64 @@ body {}
 		}
 
 			// Menu list.
-			#primary-menu ul {
+			ul {
 				list-style-type: none;
-			}
-				#primary-menu li { 
+				margin: 0;
+				padding: 0 0 0 20px; }
+				
+				li { 
 					float: left;
-					margin: 10px 0px 10px 0px;
-					width: 12%;
-					text-align: center;
-				}
-					#primary-menu li a {
+					margin: 10px 20px 10px 0;
+					text-align: center; }
+					
+					li a {
 						text-decoration: none;
 						font-size: 1.083em; //13px
 						font-weight: bold;
 						color: #000;
+						&:hover {
+							color: #0079c2;
+						}
 					}
-				#primary-menu li.current-menu-item { }
+					
+					li.current-menu-item > a,
+					li.current_page_parent > a {
+						color: #0079c2;
+					}
+					
+					li.menu-area {
+						float: right;
+						> a {						
+							color: gray; 
+							&:hover {
+								color: red; }
+							}
+						}
+
+					li.current-menu-area {
+						float: right;
+						> a {
+							color: red; }
+						}					
 				
-				#primary-menu ul ul {
+				ul ul {
+					@include border-radius(4px);
+					display: none;
 					position: absolute;
 					list-style-type: none;
 					width: 100%;
 					overflow: hidden;
-					margin: 10px 0 0 0;
-					padding: 0;
-					//background-color: #EEE;
-					//border: 1px solid #AAA;					
+					margin: 5px 0 0 -10px;
+					padding: 5px 0 5px 0;
+					background-color: #eaeaea;
+					border: 1px solid #bcbcbc;					
 				}
-				#primary-menu ul ul li {
+				ul ul li {
 					text-align: left;
 					margin: 0px;
-					padding: 2px 0 2px 10px;
-					&:hover {
-						background-color: #DDD;
-					}
+					padding: 5px 0 5px 10px;
 				}
+	}
 
 	/**
 	 * 2.2 Banner
@@ -121,16 +148,20 @@ body {}
 
 	// Wrapper for entire menu area
 	#banner-container {
-		@include prepend(1);
-		@include column(22);
-		@include append(1);
-	}
+		@include column(22, true); }
 		
 		#banner {
 			@include single-box-shadow(#000, 0, 5px, 10px, -10px, true);
+			background-position: center bottom;
 			background-color: #dddddd;			
-			height: 100px;
-		}
+			height: 100px; }
+		
+		body.dmt-area-tools #banner {
+			background-image: url('../../graphics/tools_banner-texture.png'); }
+
+		body.dmt-area-materials #banner {
+			background-image: url('../../graphics/materials_banner-texture.png'); }
+
 
 /**
  * 3. Content
@@ -141,8 +172,8 @@ body {}
 	@include container;
 }
 	#content {
-		@include column(22);
 		@include prepend(1);
+		@include column(22);
 		@include append(1);		
 	}
 
@@ -171,11 +202,12 @@ body {}
 		// Entry wrapper <div>
 		.hentry {}
 		.post {}
-		.page {
-		}
+		.page {}
 
 			// Post, page, and 404 page titles
-			.entry-title {}
+			.entry-title {
+				padding: 15px;
+			}
 			.post-title {}
 			.page-title {}
 			.attachment-title {}
@@ -183,6 +215,9 @@ body {}
 
 			.entry-title a {
 				font-family: "Futura";
+				text-transform: uppercase;
+				color: #000;
+				text-decoration: none;
 			}
 
 			// Author and date byline
@@ -315,7 +350,7 @@ body {}
 // Wrapper for the entire footer
 #footer-container {
 	width: 100%;
-	//background-color: gray;
+	background-color: #dddddd;
 }
 	#footer {
 		@include container;

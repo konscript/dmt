@@ -22,17 +22,13 @@
 	<?php wp_head(); // wp_head ?>
 	
 </head>
-<body class="bp <?php hybrid_body_class(); ?>">
+<body class="bp <?php hybrid_body_class(); ?> <?php echo 'dmt-area-' . dmt_area(); ?>">
 
 	<div id="body-wrapper">
 		<div id="header-container">
 			<div id="header">
 				<?php do_atomic( 'header' ); // hybrid_header ?>
 				<?php get_template_part( 'menu', 'primary' ); ?>
-				<div id="banner-container">
-					<div id="banner">
-					</div>
-				</div>
 			</div><!-- #header -->
 		</div><!-- #header-container -->
 
