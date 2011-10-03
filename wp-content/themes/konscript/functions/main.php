@@ -25,7 +25,7 @@ function hybrid_theme_setup_theme() {
 
 	/* Add support for framework features. */
 	add_theme_support( 'hybrid-core-menus' );
-	add_theme_support( 'hybrid-core-sidebars', array( 'primary' ) );
+	add_theme_support( 'hybrid-core-sidebars' );
 	//add_theme_support( 'hybrid-core-widgets' );
 	add_theme_support( 'hybrid-core-shortcodes' );
 	//add_theme_support( 'hybrid-core-post-meta-box' );
@@ -51,7 +51,6 @@ function hybrid_theme_setup_theme() {
 
 	/* Header actions. */
 	add_action( "{$prefix}_header", 'site_title' );
-	add_action( "{$prefix}_header", 'site_description' );
 
 	/* Add the primary and secondary sidebars after the container. */
 	add_action( "{$prefix}_sidebar_primary", 'sidebar_primary' );
@@ -83,10 +82,9 @@ function hybrid_theme_setup_theme() {
  * theme.
  */
 function hybrid_theme_register_sidebars() {
-	/* Register the 404 template sidebar. */
-	register_sidebar(
+		register_sidebar(
 		array(
-			'id' => 'error-404-template',
+			'id' => 'error-404-template', // 404 template
 			'name' => __( '404 Template', hybrid_get_textdomain() ),
 			'description' => __( 'Replaces the default 404 error page content.', hybrid_get_textdomain() ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-inside">',
@@ -95,6 +93,18 @@ function hybrid_theme_register_sidebars() {
 			'after_title' => '</h3>'
 		)
 	);
+	register_sidebar(
+		array(
+			'id' => 'homepage', // homepage sidebar
+			'name' => __( 'Homepage', hybrid_get_textdomain() ),
+			'description' => __( 'Main sidebar on the homepage.', hybrid_get_textdomain() ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-inside">',
+			'after_widget' => '</div></div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+
 }
 
 /**
@@ -226,16 +236,6 @@ function site_title() {
 		$title = '<' . $tag . ' id="site-logo"><a href="' . home_url() . '" title="' . esc_attr( $title ) . '" rel="home"><img src="'.   get_bloginfo ('template_url') .'/graphics/logo.png"></img></a></' . $tag . '>';
 
 	echo apply_atomic( 'site_title', $title );
-}
-
-/**
- * Dynamic element to wrap the site description in.  If it is the front page, wrap it in an <h2> element.  
- * On other pages, wrap it in a <div> element.
- */
-function site_description() {
-	$desc = '<div id="site-sponsors">Sponsors go here!</div>';
-
-	echo apply_atomic( 'site_description', $desc );
 }
 
 ?>

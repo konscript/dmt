@@ -14,7 +14,7 @@
 <head>
 	
 	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
-	<title><?php hybrid_document_title(); ?></title>
+	<title><?php hybrid_document_title(); ?> | Dansk Materiale Teknik A/S</title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/stylesheet/compiled/main.css" type="text/css" media="all" />
@@ -29,6 +29,9 @@
 				<div id="header">
 					<?php do_atomic( 'header' ); // hybrid_header ?>
 					<?php get_template_part( 'menu-general' ); ?>				
+					<div id="site-sponsors">
+						<img src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logos.png"></img>
+					</div>
 					<?php get_template_part( 'menu-primary' ); ?>
 				</div><!-- #header -->
 			</div><!-- #header-container -->

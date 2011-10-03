@@ -9,8 +9,6 @@
  */
 ?>
 
-		<?php get_sidebar( 'primary' ); ?>
-
 		</div><!-- #content-container -->
 	</div><!-- #body-wrapper -->
 	<div id="footer-container">

@@ -21,7 +21,11 @@ get_header(); // Loads the header.php template. ?>
 				</div><!-- .entry-content -->
 				<?php do_atomic( 'entry_footer' ); ?>
 			</div><!-- .hentry -->
-
+			
+			<div id="home-widgetzone" class="widgetzone">
+				<?php dynamic_sidebar( 'homepage' ); ?>
+			</div>
+				
 			<?php endwhile; ?>
 		<?php else: ?>
 

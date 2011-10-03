@@ -60,7 +60,11 @@ body,
 		#site-sponsors {
 			@include column(11, true);
 			@include append(1);
-			display: none; }
+			padding-top: 7px; }
+			
+			#site-sponsors img {
+				float: right;
+			}
 
 	/**
 	 * 2.1 Primary Menu
@@ -78,18 +82,25 @@ body,
 			
 			> ul {
 				padding: 0;
-				float: right; }
+				float: right;
 			
 				> li {
-					margin: 10px 0px 10px 20px;
+					margin: 0 0 0 20px;
 					padding: 0; }
-					
+				}
+				
+			ul ul {
+				margin-top: 26px;
+				background-color: #fff;
+				border: 1px solid #bcbcbc;
+				border-top: none;
+			}
 		}	
 
 	// Wrapper for entire menu area
 	#top-menu-container {
 		@include column(24, true);
-		margin-top: 10px; }
+		margin-top: 15px; }
 	
 	.menu-container {
 	
@@ -99,6 +110,7 @@ body,
 			@include background-image(linear-gradient(#fff, #d6d6d6));
 			//background: url('../../graphics/primary-menu_bg.png');
 			//background-repeat: repeat-x;
+			background-color: #f2f2f2;
 			border: 1px solid #bcbcbc;
 			height: 40px;
 			margin: 0;
@@ -117,12 +129,12 @@ body,
 					text-align: center; }
 					
 					li a {
+						@include transition-property(color);
+						@include transition-duration(0.5s);
 						text-decoration: none;
 						font-size: 1.083em; //13px
 						font-weight: bold;
 						color: #000;
-						@include transition-property(color);
-						@include transition-duration(0.5s);
 						&:hover {
 							color: #0079c2; }
 					}
@@ -139,25 +151,25 @@ body,
 					li .separator {
 						margin-left: 20px; }
 					
-					li.no-separator .separator {
+					li:last-child .separator {
 						display: none; }			
 				
 				ul ul {
-					@include border-radius(4px);
+					@include border-bottom-radius(4px);
 					display: none;
 					position: absolute;
 					list-style-type: none;
-					width: 100%;
 					overflow: hidden;
-					margin: 35px 0 0 0;
-					padding: 5px 0 5px 5px;
-					background-color: #fff;
-					border: 1px solid #bcbcbc; }
+					margin: 35px 0 0 -8px;
+					padding: 5px 0 0 18px;
+					background-color: #dddddd;
+					border: 1px solid #bcbcbc; 
+					border-top: none; }
 
 					ul ul li {
 						text-align: left;
 						margin: 0px;
-						padding: 5px 0 5px 5px; }
+						padding: 0 0 13px 0; }
 
 					ul ul li .separator {
 						display: none; }
@@ -191,7 +203,10 @@ body,
 	body.home #top-menu-container li.materials-area,
 	body.home #top-menu-container li.tools-area {
 		> a {
-			color: gray; }
+			color: gray;
+			&:hover {
+				color: $menu-selected-area; }
+			}
 	}
 
 	/**
@@ -280,7 +295,7 @@ body,
 			.error-404-title {}
 
 			.entry-title a {
-				@include single-text-shadow(white, -1px, 0, 0);
+				@include single-text-shadow(white, 0, 1px, 2px);
 				font-family: $customfont;
 				text-transform: uppercase;
 				color: #000;
@@ -294,6 +309,10 @@ body,
 			.entry-content {
 				@include column(22, true);
 				padding: 20px 0 20px 0; }
+				
+			body.home .entry-content {
+				@include column(11);
+			}
 
 			// Excerpts (introduced)
 			.entry-summary {}
@@ -328,8 +347,31 @@ body,
 		// Attachment image navigation
 		.navigation-attachment {}
 
+		/**
+		 * 3.1 Widget sections (Primary and Secondary)
+		 ************************************************/
+
+		// Widgets in general
+		.widget {}
+			.widget-inside {}
+				.widget-title {}
+
+		// Homepage widget section
+		#home-widgetzone {
+			@include column(11, true);			
+			
+			.widget {
+				@include column(5); 
+				padding-bottom: 20px; }
+				
+				.widget-inside {}
+					.widget-title {}
+					.widget ul {}
+						.widget ul li {}
+		}
+
 	/**
-	 * 3.1 Comments template
+	 * 3.2 Comments template
 	 ************************************************/
 
 	// Wrapper for entire comments area
@@ -393,24 +435,6 @@ body,
 						#respond textarea {}
 					#respond #submit {}
 						#respond #submit:hover {}
-
-	/**
-	 * 3.2 Widget sections (Primary and Secondary)
-	 ************************************************/
-
-	// Widgets in general
-	.widget {}
-		.widget-inside {}
-			.widget-title {}
-
-	// Primary widget section
-	#sidebar-primary {
-		.widget {}
-			.widget-inside {}
-				.widget-title {}
-				.widget ul {}
-					.widget ul li {}
-	}
 
 /**
  * 4. Footer

@@ -39,8 +39,6 @@ $j(document).ready(
 
 		/* Drop-down controls. */
 		$j('div.menu > ul').supersubs( {
-			minWidth: 12,
-			maxWidth: 27,
 			extraWidth: 1
 			}
 		).superfish( {
