@@ -471,7 +471,7 @@ body,
 		}*/
 		
 		.widget { // Contact info
-		    @include prepend(4);
+		    @include prepend(5);
 		    @include column(6);
 		}
 		
@@ -492,7 +492,7 @@ body,
 		                @include transition-property(color);
 						@include transition-duration(0.5s);
 						text-decoration: none;
-						font-size: 1.0em; //13px
+						font-size: 1.0em;
 						color: #000;
 						&:hover {
 							color: #0079c2; }
