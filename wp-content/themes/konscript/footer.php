@@ -13,9 +13,13 @@
 	</div><!-- #body-wrapper -->
 	<div id="footer-container">
 		<div id="footer">
+		<!--
 			<span>Dansk Materiale Teknik A/S  |  Smedeholm 8, DK-2730 Herlev, Danmark</span>
 			<span>CVR: 25063481  |  dmt@dmtas.dk  |  +45 70201601</span>
-			<?php do_atomic( 'breadcrumb' ); // breadcrumb trail ?>
+		-->
+		    <?php get_template_part( 'menu-footer' ) ?>
+		    <?php dynamic_sidebar( 'footer' ); ?>
+			<?php //do_atomic( 'breadcrumb' ); // breadcrumb trail ?>
 		</div><!-- #footer -->
 	</div><!-- #footer-container -->
 </div><!-- #body-container -->

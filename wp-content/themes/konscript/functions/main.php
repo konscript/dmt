@@ -82,7 +82,7 @@ function hybrid_theme_setup_theme() {
  * theme.
  */
 function hybrid_theme_register_sidebars() {
-		register_sidebar(
+	register_sidebar(
 		array(
 			'id' => 'error-404-template', // 404 template
 			'name' => __( '404 Template', hybrid_get_textdomain() ),
@@ -104,6 +104,17 @@ function hybrid_theme_register_sidebars() {
 			'after_title' => '</h3>'
 		)
 	);
+	register_sidebar(
+	    array(
+	        'id' => 'sidebar-footer',
+	        'name' => __( 'Footer', hybrid_get_textdomain() ),
+	        'description' => __( 'Dynamic content for footer.', hybrid_get_textdomain() ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-inside">',
+			'after_widget' => '</div></div>',
+			'before_title' => '<div class="widget-title">',
+			'after_title' => '</div>'	        
+	    )
+	);
 
 }
 
@@ -114,7 +125,9 @@ function hybrid_theme_register_menus() {
 	register_nav_menu( 'area', __( 'Area Topmenu', hybrid_get_textdomain() ) );
 	register_nav_menu( 'general', __( 'General Topmenu', hybrid_get_textdomain() ) );
 	register_nav_menu( 'tools', __( 'Tools Topmenu', hybrid_get_textdomain() ) );
-	register_nav_menu( 'materials', __( 'Materials Topmenu', hybrid_get_textdomain() ) );		
+	register_nav_menu( 'materials', __( 'Materials Topmenu', hybrid_get_textdomain() ) );
+	register_nav_menu( 'tools-footer', __('Tools footer menu', hybrid_get_textdomain()) );
+	register_nav_menu( 'materials-footer', __('Materials footer menu', hybrid_get_textdomain()) );	
 }
 
 /**
