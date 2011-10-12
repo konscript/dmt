@@ -30,7 +30,7 @@
 					<?php do_atomic( 'header' ); // hybrid_header ?>
 					<?php get_template_part( 'menu-general' ); ?>				
 					<div id="site-sponsors">
-						<img src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logos.png"></img>
+						<img src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logos.png" />
 					</div>
 					<?php get_template_part( 'menu-primary' ); ?>
 				</div><!-- #header -->

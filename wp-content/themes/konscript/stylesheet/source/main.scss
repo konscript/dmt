@@ -49,7 +49,8 @@ body,
 		// Site title
 		#site-logo {
 			@include column(11);
-			@include prepend(1); }
+			@include prepend(1);
+			height: 111px; }
 
 		h1#site-logo {
 			margin-bottom: 0; }
@@ -131,6 +132,7 @@ body,
 					li a {
 						@include transition-property(color);
 						@include transition-duration(0.5s);
+						float: left;
 						text-decoration: none;
 						font-size: 1.083em; //13px
 						font-weight: bold;
@@ -149,6 +151,7 @@ body,
 							margin-right: 4px; }
 						
 					li .separator {
+						float: left;						
 						margin-left: 20px; }
 					
 					li:last-child .separator {
@@ -160,7 +163,7 @@ body,
 					position: absolute;
 					list-style-type: none;
 					overflow: hidden;
-					margin: 35px 0 0 -8px;
+					margin: 26px 0 0 -8px;
 					padding: 5px 0 0 18px;
 					background-color: #dddddd;
 					border: 1px solid #bcbcbc; 

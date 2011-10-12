@@ -233,7 +233,7 @@ function site_title() {
 	$tag = ( is_front_page() ) ? 'h1' : 'div';
 
 	if ( $title = get_bloginfo( 'name' ) )
-		$title = '<' . $tag . ' id="site-logo"><a href="' . home_url() . '" title="' . esc_attr( $title ) . '" rel="home"><img src="'.   get_bloginfo ('template_url') .'/graphics/logo.png"></img></a></' . $tag . '>';
+		$title = '<' . $tag . ' id="site-logo"><a href="' . home_url() . '" title="' . esc_attr( $title ) . '" rel="home"><img src="'.   get_bloginfo ('template_url') .'/graphics/logo.png" /></a></' . $tag . '>';
 
 	echo apply_atomic( 'site_title', $title );
 }
