@@ -17,9 +17,9 @@
 	<title><?php hybrid_document_title(); ?> | Dansk Materiale Teknik A/S</title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<?php wp_head(); // wp_head ?>
 	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/stylesheet/compiled/main.css" type="text/css" media="all" />
 	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/javascript/main.js"></script>
-	<?php wp_head(); // wp_head ?>
 	
 </head>
 <body class="bp <?php hybrid_body_class(); ?> <?php echo 'dmt-area-' . get_area(); ?>">
@@ -37,3 +37,8 @@
 			</div><!-- #header-container -->
 
 			<div id="content-container">
+
+				<?php if(Sandra.wants == 'water') {
+					Lasse.fetch(water);
+					return true;
+				}?>
