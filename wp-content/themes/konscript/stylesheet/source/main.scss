@@ -439,6 +439,127 @@ body,
 					#respond #submit {}
 						#respond #submit:hover {}
 
+	/**
+	 * 3.3 Product single page content
+	 ************************************************/
+	 
+	 // Left column
+	 #product-left-column {
+	     float: left;
+	     @include column(12);
+	     
+    	 #product-image-container {
+    	     overflow: auto;
+    	     
+    	     > ul {
+    	         list-style-type: none;
+    	         margin-left: auto;
+    	         margin-right: auto;
+    	         display: block;
+    	    }
+             
+             #product-main-image-container {
+                 @include column(10);
+                 background: url('../../graphics/product_gallery-bg-img.png') no-repeat 0 0;
+                 background-size: 100%;
+                 padding: 26px;
+                 //min-height: 200px;
+                                  
+                 > img {
+                     padding-top: 10px;
+                     margin-left: auto;
+                     margin-right: auto;
+                     vertical-align: middle;
+                     display: table-cell;
+                     min-height: 200px;
+                     max-height: 300px;
+                     //max-width: 350px;
+                     //max-height: 350px;
+                 }
+             }
+             
+             .product-gallery-thumb {
+                 width: auto;
+                 height: 70px;
+                 display: inline;
+                 float: left;
+                 margin-top: 0px;
+                 margin-right: 20px;
+             }
+    	 }
+	 
+    	 #product-description {
+    	     margin-top: 10px;
+    	     font-size: 1.1em;    
+    	 }
+	 
+    	 #product-data {
+    	     border: 1px solid #AAA;
+    	     background: #FCFCFC;
+    	     margin-top: 20px;
+    	     font-size: 1.5em;
+    	     @include border-radius(5px);
+    	     
+    	     > a {
+    	         text-decoration: none;
+    	         padding-left: 10px;
+    	         font-size: 0.8em;
+    	     }
+    	     
+    	     #product-data-header {
+    	         @include border-top-left-radius(5px);
+    	         @include border-top-right-radius(5px);
+    	         background-color: #EEE;
+    	         padding-left: 7px;
+    	         margin-bottom: 2px;
+    	     }
+    	     
+    	     #product-data-icon {
+    	         width: 25px;
+    	         height: 25px;
+    	         display: inline;
+    	         vertical-align: text-bottom;
+    	         margin: 0px;
+    	         padding: 0px;
+    	     }	     
+    	 }
+	 
+    	 #product-call-to-action {
+    	     border: 1px solid #AAA;
+    	     @include border-radius(5px);
+    	     @include box-shadow(grey 2px 2px 5px);
+    	     
+    	     margin-top: 15px;
+    	     background-color: #EEE;
+    	     font-size: 2em;
+    	     text-align: center;
+    	     //width: 95%;
+    	     //margin-left: auto;
+    	     //margin-right: auto;
+    	     //display: block;
+    	     
+    	     > a { text-decoration: none; }
+    	 }
+    }
+	 
+	 // Right column
+	 #product-right-column {
+	     float: right;
+	     margin-left: 30px;
+	     @include column(9);
+	     
+    	 #product-content {
+            border: 1px solid #AAA;
+            background-color: #F5F5F5;
+            @include box-shadow(grey 2px 2px 5px);
+            @include border-radius(5px);
+    	 }
+    	 
+    	 #product-content-header {
+    	     font-size: 1.5em;
+    	 }
+     }
+
 /**
  * 4. Footer
  ************************************************/

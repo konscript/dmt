@@ -1,3 +1,6 @@
 jQuery(document).ready(function($) {
-	// jquery stuff goes here
+	// Image swap on hover
+    $("#product-image-container li img").hover(function(){
+        $('#product-main-image').attr('src',$(this).attr('src'));
+    });
 });
