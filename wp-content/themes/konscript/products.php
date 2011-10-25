@@ -24,6 +24,7 @@ get_header(); ?>
         				        <img id="product-main-image" src="<?php the_field('image_1'); ?>" />
         				    </div>
         				    <?php if (get_field('image_2')): ?>
+        				    <div id="product-gallery-thumbs">
                             <ul>
                               <li><img class="product-gallery-thumb" src="<?php the_field('image_1'); ?>" /></li>
                               <li><img class="product-gallery-thumb" src="<?php the_field('image_2'); ?>" /></li>
@@ -31,6 +32,7 @@ get_header(); ?>
                               <li><img class="product-gallery-thumb" src="<?php the_field('image_3'); ?>" /></li>
                               <?php endif; ?>
                             </ul>
+                            </div>
                             <?php endif; ?>
         				</div>
         				<?php endif; ?>
