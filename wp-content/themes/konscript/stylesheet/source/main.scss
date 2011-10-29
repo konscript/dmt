@@ -639,14 +639,18 @@ body,
      	     border: 1px solid #000;
      	     @include border-radius(5px);
      	     z-index: 0;
+     	     margin-left: 10px;
+     	     overflow: auto;
 
      	     position: absolute;
      	     bottom: -50px;
+     	     left: 0px;
 
-     	     text-align: center;
      	     font-size: 1.1em;
+     	     text-align: center;
 
      	     > span {
+     	         width: 100%;
      	         position: absolute;
      	         bottom: 2px;
      	     }
