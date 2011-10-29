@@ -18,6 +18,7 @@ get_header(); ?>
 				<?php do_atomic( 'entry_header' ); ?>
     			<div class="entry-content">
     			    <div id="product-left-column">
+    			        <?php echo get_the_term_list($post->ID, 'product-categories', 'Produktkategori: ', ', ', ''); ?>
     			        <?php if (get_field('image_1')): ?>
         				<div id="product-image-container">
         				    <div id="product-main-image-container">

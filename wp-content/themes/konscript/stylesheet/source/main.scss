@@ -537,7 +537,7 @@ body,
     	 #product-call-to-action {
     	     border: 1px solid #AAA;
     	     @include border-radius(5px);
-    	     @include box-shadow(grey 2px 2px 5px);
+    	     @include box-shadow(gray 2px 2px 5px);
     	     
     	     margin-top: 20px;
     	     background-color: #EEE;
@@ -561,13 +561,106 @@ body,
     	 #product-content {
             border: 1px solid #AAA;
             background-color: #F5F5F5;
-            @include box-shadow(grey 2px 2px 5px);
+            @include box-shadow(gray 2px 2px 5px);
             @include border-radius(5px);
     	 }
     	 
     	 #product-content-header {
     	     font-size: 1.5em;
     	 }
+     }
+     
+     /**
+ 	 * 3.4 Product Category taxonomy page content
+ 	 ************************************************/
+ 	 .product-category-content {
+ 	     width: 100%; 
+ 	     margin-left: 7px;
+ 	 }
+ 	 
+ 	 .product-category-product {
+ 	     @include column(6);
+ 	     //border: 1px dotted;
+ 	     padding: 10px;
+ 	     margin-bottom: 60px;
+ 	     position: relative;
+ 	     
+ 	     .product-category-product-image-container {
+ 	         width: 100%;
+             border: 1px solid #000;
+             @include border-radius(5px);
+             
+             .product-category-product-image {
+                 width: 70px;
+                 height: 100px;
+                 display: block;
+                 margin-left: auto;
+                 margin-right: auto;
+                 padding: 20px;
+             }  
+ 	     }
+ 	     
+ 	     > a {
+ 	         text-decoration: none;
+ 	         color: #000;
+ 	         @include single-text-shadow(white, 0, 2px, 1px);
+ 	         &:active {
+ 	             @include single-text-shadow(white, 0, 0px, 0px);
+ 	         }
+ 	         &:hover {
+ 	             > div { border-color: #000; }
+ 	             color: #0079c2;
+ 	         }
+ 	     }
+ 	     
+ 	     .product-category-product-title {
+ 	         border: 1px solid #000;
+ 	         @include border-radius(5px);
+ 	         background-color: #DDD;
+ 	         
+ 	         width: 100%;
+ 	         margin-left: -10px;
+ 	         padding: 10px;
+ 	         position: absolute;
+ 	         bottom: -25px;
+ 	         left: 0;
+ 	         
+ 	         text-align: center;
+ 	         font-size: 1.2em;
+ 	         font-weight: bold;
+ 	         
+ 	         overflow: auto;
+ 	         z-index: 2;
+ 	     }
+ 	       
+     	 .product-category-product-data {
+     	     width: 93%;
+     	     height: 40px;
+     	     border: 1px solid #000;
+     	     @include border-radius(5px);
+     	     z-index: 0;
+
+     	     position: absolute;
+     	     bottom: -50px;
+
+     	     text-align: center;
+     	     font-size: 1.1em;
+
+     	     > span {
+     	         position: absolute;
+     	         bottom: 2px;
+     	     }
+     	     
+     	     > span img {
+     	         width: 15px;
+     	         vertical-align: text-bottom;
+     	     }
+     	 }
+ 	 }
+ 	 
+ 	 .product-category-product-spacer {
+         @include column(1);
+         overflow: auto;
      }
 
 /**
