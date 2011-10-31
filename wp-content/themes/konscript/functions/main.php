@@ -251,4 +251,9 @@ function site_title() {
 	echo apply_atomic( 'site_title', $title );
 }
 
+function dmt_company_info($type) {
+    $info = array( 'phone' => 70201601, 'email' => 'dmt@dmtas.dk');
+    echo $info[$type];
+}
+
 ?>

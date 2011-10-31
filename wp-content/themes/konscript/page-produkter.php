@@ -1,27 +1,16 @@
 <?php
 /**
- * Default page template
+ * Page template for the overall product page ("Produkter")
  */
 
 get_header(); // Loads the header.php template. ?>
 	<div id="content" class="hfeed content">
-	    <?php // Get taxonomy term - values: term_id name slug term_group term_taxonomy_id taxonomy description parent count ?>
-	    <?php $term = get_term_by('slug', get_query_var( 'product-categories' ), 'product-categories' ); ?>
-	    <!-- Title banner -->
-		<div id="banner-container">
-		    <div id="banner">
-			    <h1 class="page-title entry-title">
-                    <a href="<?php echo $_SERVER['REQUEST_URI']; ?>" title="<?php echo $term->name; ?>" rel="bookmark"><?php echo $term->name; ?></a>
-                </h1>
-		    </div>
-		</div>
-		<!-- /Title banner -->
-		
+		<?php do_atomic( 'entry_header' ); ?>
 		<div class="product-category-content">
 		    <div class="product-category-call-to-action">
-		        Kontakt os på 70201601 eller <a href="mailto:dmt@dmtas.dk">dmt@dmtas.dk</a> for bestilling eller konsultation
+		        Kontakt os på <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a> for bestilling eller konsultation
 		    </div>
-            <?php query_posts(array( 'post_type'=>'products', 'product-categories'=>$term->slug, 'orderby'=>'title', 'order'=>'ASC' ) ); ?>
+            <?php query_posts(array( 'post_type'=>'products', 'orderby'=>'title', 'order'=>'ASC' ) ); ?>
             <?php $productsperrow = 3; $pc = 1; ?>
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <!-- Products go here! -->
@@ -46,6 +35,6 @@ get_header(); // Loads the header.php template. ?>
     		<?php get_template_part( 'loop-nav' ); ?>
 		</div>
 		<?php do_atomic( 'entry_footer' ); ?>
-		
+
 	</div><!-- .content .hfeed -->
 <?php get_footer(); // Loads the footer.php template. ?>

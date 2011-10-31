@@ -45,7 +45,7 @@ get_header(); ?>
 			                <a href="<?php the_field('data_sheet'); ?>"><?php echo basename(get_field('data_sheet')); ?> <img id="product-data-icon" src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon.png" /></a>
         				</div>
         				<div id="product-call-to-action">
-        				    Bestil på 70201601 eller <a href="mailto:dmt@dmtas.dk">dmt@dmtas.dk</a>
+        				    Bestil på <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a>
         				</div>
     				</div>
     				<div id="product-right-column">
