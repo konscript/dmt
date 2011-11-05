@@ -687,6 +687,73 @@ body,
          @include column(1);
          overflow: auto;
      }
+     
+     /**
+ 	 * 3.5 page-tilbud content
+ 	 ************************************************/
+	    .tilbud-content {
+	        @include column(22); }
+
+ 	    .tilbud-centering-container {
+ 	        width: 93%;
+ 	        margin-left: auto;
+ 	        margin-right: auto; 
+ 	        overflow: auto;    
+ 	        
+ 	        .tilbud-thumbnail-container {
+ 	            float: left;
+ 	            border: 1px solid #DDD;
+ 	            width: 150px;
+ 	            padding: 10px;
+ 	            margin-top: 10px;
+ 	            margin-bottom: 10px;
+ 	            
+ 	            text-align: center;
+ 	            
+ 	            > a { text-decoration: none; }
+ 	            
+ 	            > a span {
+ 	                padding-top: 5px;
+ 	                display: block;
+ 	                color: #555;
+ 	                font-size: 1.3em;
+ 	            }
+ 	            
+ 	            &:hover {
+ 	                border-color: #AAA;
+ 	                > a span {
+ 	                    color: #000;
+ 	                }
+ 	            }
+ 	            
+ 	            &:active {
+ 	                border-color: #555;
+ 	            }
+ 	        }
+ 	        
+ 	        .tilbud-spacer {
+                @include column(1);
+                overflow: auto; 	            
+ 	        }
+ 	    }
+ 	 
+     	 /**
+     	 * 3.5.1 Template Name: Tilbud content
+     	 ************************************************/
+     	 #tilbud-embedded {
+     	     @include column(22);
+     	     height: 500px;
+     	     padding-top: 5px;
+ 	         padding-bottom: 30px;
+ 	         
+ 	         > a { text-decoration: none; }
+     	     
+     	     > iframe {
+     	         width: 100%;
+     	         height: 100%;
+     	     }
+     	 }
+ 	 
 
 /**
  * 4. Footer
