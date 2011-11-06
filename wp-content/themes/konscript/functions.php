@@ -14,6 +14,9 @@ require_once( trailingslashit( TEMPLATEPATH ) . 'functions/main.php' );
 // Load the area functions
 require_once( trailingslashit( TEMPLATEPATH ) . 'functions/area.php' );
 
+// Load the media functions
+require_once( trailingslashit( TEMPLATEPATH ) . 'functions/media.php' );
+
 // Load the admin-only functions
 if (is_admin()) {
 	require_once( trailingslashit( TEMPLATEPATH ) . 'functions/admin.php' );
