@@ -1,5 +1,6 @@
 <?php
 // Start custom gallery link code
+// Found here: http://geekeemedia.com/wordpress/add-a-custom-url-to-your-wordpress-gallery-images/
 
 /* -------------------------------
 CUSTOM LINK PER GALLERY IMAGE
