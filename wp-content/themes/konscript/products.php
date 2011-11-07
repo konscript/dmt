@@ -38,7 +38,7 @@ get_header(); ?>
         				</div>
         				<?php endif; ?>
         				<div id="product-description">
-        				    <?php the_content(); ?>
+        				    <?php the_field('product_description'); ?>
         				</div>
         				<div id="product-data">
         				    <div id="product-data-header">Hent materialedata</div>
@@ -51,7 +51,7 @@ get_header(); ?>
     				<div id="product-right-column">
     				    <div id="product-content-header">Specifikationer</div>
         				<div id="product-content">
-        					<?php the_field('product_specifications'); ?>
+        					<?php the_content(); ?>
         					<?php wp_link_pages( array( 'before' => '<p class="page-links pages">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
         				</div>
     				</div>
