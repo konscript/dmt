@@ -5,6 +5,7 @@
 // Load the WP defaults and base
 @import "_wordpress";
 @import "_base";
+@import "compass/css3";
 
 // Typography setup
 $blueprint-font-family: Arial, Helvetica, sans-serif;
@@ -755,6 +756,120 @@ body,
      	         height: 100%;
      	     }
      	 }
+
+ 	/**
+ 	 * 3.6 Tools front page
+ 	 ************************************************/
+ 	 .tools-front-content {
+ 	     @include column(22);
+ 	     
+ 	     .tools-front-left-column {
+ 	         @include column(13);
+ 	         float: left;
+ 	         margin-top: 10px;
+ 	     }
+ 	     
+ 	     .tools-front-right-column {
+ 	         @include column(8);
+ 	         float: right;
+ 	         padding-top: 10px;
+ 	         padding-left: 30px;
+ 	         
+ 	         > a { text-decoration: none; }
+ 	         
+ 	         #tools-front-manufacturers {
+ 	             float: left;
+ 	             border: 1px solid #DDD;
+ 	             @include border-radius(5px);
+ 	             @include column(7);
+ 	             height: 150px;
+ 	             
+ 	             #tools-front-manufacturers-title {
+ 	                 @include border-top-left-radius(5px);
+        	         @include border-top-right-radius(5px);
+ 	                 width: 100%;
+ 	                 background: #DDD;
+ 	                 
+ 	                 > span {
+ 	                     color: #000;
+ 	                     padding-left: 10px;
+ 	                     font-size: 1.3em;
+ 	                 } 
+ 	             }
+ 	             
+ 	             #tools-front-manufacturers-slideshow {
+ 	                 width: 100%;
+ 	                 height: 82%;
+ 	                 margin-left: auto;
+ 	                 margin-right: auto;
+ 	                 > div {
+ 	                     width: 100%;
+ 	                     height: 100%;
+ 	                 }
+ 	                 > div div {
+ 	                     background-repeat: no-repeat;
+ 	                     background-position: center center;
+ 	                     width: 100%;
+ 	                     height: 100%;
+ 	                 }
+ 	             }
+ 	         }
+ 	         
+ 	         #tools-front-tilbud {
+ 	             float: left;
+ 	             @include column(7);
+ 	             border: 1px solid #DDD;
+ 	             @include border-radius(5px);
+ 	             margin-top: 40px;
+ 	             
+ 	             > a { text-decoration: none; }
+ 	             
+ 	             #tools-front-tilbud-title {
+ 	                 @include border-top-left-radius(5px);
+        	         @include border-top-right-radius(5px);
+ 	                 width: 100%;
+ 	                 background: #DDD;
+ 	                 
+ 	                 > span {
+ 	                     color: #000;
+ 	                     padding-left: 10px;
+ 	                     font-size: 1.3em;
+ 	                 }           
+ 	             }
+ 	             
+ 	             #tools-front-tilbud-single-centering-container {             
+ 	                 width: 89%;
+ 	                 display: block;
+ 	                 margin-left: auto;
+ 	                 margin-right: auto;
+ 	                 overflow: auto;
+ 	                 
+ 	                 .tools-front-tilbud-single-spacer {
+ 	                     width: 10px;
+ 	                     display: inline;
+ 	                     float: left;
+ 	                 }
+ 	                 
+     	             .tools-front-tilbud-single {
+     	                @include opacity(0.8);
+     	                float: left;
+     	                margin-top: 10px;
+     	                margin-bottom: 10px;
+     	                z-index: 1;
+                        > a img {
+                            height: 100px;
+                            width: 70px;
+                        }
+                        
+                        &:hover {
+                            @include opacity(1.0);
+                        }
+     	             }
+                }
+ 	             
+ 	         }
+ 	     }
+ 	 }
  	 
 
 /**

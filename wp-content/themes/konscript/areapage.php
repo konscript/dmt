@@ -15,10 +15,17 @@ get_header(); // Loads the header.php template. ?>
 					</div>
 				</div>
 				
+				<?php if (get_area() == "tools"): ?>
+				    
+				    <?php get_template_part('areapage-tools'); ?>
+				    
+				<?php else: ?>
+				
 				<div class="entry-content">
 					<?php the_content(); ?>
 					<?php wp_link_pages( array( 'before' => '<p class="page-links pages">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
 				</div><!-- .entry-content -->
+				<?php endif; ?>
 				<?php do_atomic( 'entry_footer' ); ?>
 			</div><!-- .hentry -->
 

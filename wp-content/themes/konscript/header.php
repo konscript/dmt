@@ -19,6 +19,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); // wp_head ?>
 	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/stylesheet/compiled/main.css" type="text/css" media="all" />
+	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/javascript/jquery.cycle.lite.js"></script>
 	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/javascript/main.js"></script>
 	
 </head>
