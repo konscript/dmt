@@ -871,6 +871,24 @@ body,
  	     }
  	 }
  	 
+ 	 /**
+  	 * 3.6 Materials front page
+  	 ************************************************/
+  	 .materials-front-content {
+  	     @include column(22);
+  	     margin-top: 10px;
+  	 }
+  	 
+  	 #materials-front-left-column {
+  	     @include column(13);
+  	     float: left;
+  	 }
+  	 
+  	 #materials-front-right-column {
+  	     @include column(8);
+  	     float: right;
+  	 }
+ 	 
 
 /**
  * 4. Footer
