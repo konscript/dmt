@@ -11,7 +11,11 @@ get_header(); // Loads the header.php template. ?>
 			<div id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
 
 				<div id="banner-container">
-					<div id="banner">
+					<div id="banner-materials">
+						Materialer
+					</div>
+					<div id="banner-tools">
+						Værktøjer
 					</div>
 				</div>
 				

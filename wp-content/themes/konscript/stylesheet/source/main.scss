@@ -103,6 +103,10 @@ body,
 		@include column(24, true);
 		margin-top: 15px; }
 	
+		.home .menu-container #top-menu {
+			height: 10px;
+		}	
+	
 	.menu-container {
 	
 		// Wrapper for unordered list of menu items
@@ -242,12 +246,20 @@ body,
 		body.dmt-area-materials #banner {
 			background-image: url('../../graphics/materials_banner-texture.png'); }
 
-		body.home #banner {
+		body.home #banner-materials {
+			@include column(12);
 			background-image: url('../../graphics/home_banner-texture.png');
 			background-color: transparent;
 			background-position: left top;
 			box-shadow: none;
-			width: 100%;
+			height: 278px; }
+
+		body.home #banner-tools {
+			@include column(12, true);			
+			background-image: url('../../graphics/home_banner-texture.png');
+			background-color: transparent;
+			background-position: left top;
+			box-shadow: none;
 			height: 278px; }
 
 

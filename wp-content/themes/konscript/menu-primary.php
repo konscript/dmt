@@ -18,15 +18,12 @@
 			'menu_class' 			=> 'primary-menu',
 			'after'           => '<span class="separator">•</span>',
 			'fallback_cb' 		=> ''));
-		}
-		?>
-		<?php
 		echo wp_nav_menu(array( 
 			'theme_location' 	=> 'area', 
 			'container' 			=> false, 
 			'menu_class' 			=> 'area-menu',
 			'fallback_cb' 		=> ''));
-		?>
+			} ?>
 		</div>
 	</div><!-- #primary-menu .menu-container -->
 
