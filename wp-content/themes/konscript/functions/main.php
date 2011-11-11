@@ -39,7 +39,7 @@ function hybrid_theme_setup_theme() {
 	/* Add support for framework extensions. */
 	add_theme_support( 'breadcrumb-trail' );
 	// add_theme_support( 'custom-field-series' );
-	// add_theme_support( 'get-the-image' );
+	add_theme_support( 'get-the-image' );
 	// add_theme_support( 'post-stylesheets' );
 
 	/* Add support for WordPress features. */
@@ -255,5 +255,4 @@ function dmt_company_info($type) {
     $info = array( 'phone' => 70201601, 'email' => 'dmt@dmtas.dk');
     echo $info[$type];
 }
-
 ?>

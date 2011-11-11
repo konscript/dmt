@@ -1,6 +1,6 @@
 <?php
 /**
- * Default page template
+ * Page template for product-categories taxonomy page
  */
 
 get_header(); // Loads the header.php template. ?>
@@ -28,6 +28,7 @@ get_header(); // Loads the header.php template. ?>
                 <div class="product-category-product">
                     <a href="<?php the_permalink(); ?>">
                         <div class="product-category-product-image-container">
+                            <!-- Insert check -->
                             <img class="product-category-product-image" src="<?php the_field('image_1'); ?>" />
                         </div>
                         <div class="product-category-product-title">
