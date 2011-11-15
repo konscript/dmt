@@ -226,16 +226,20 @@ body,
 
 	// Wrapper for entire menu area
 	#banner-container {
-		@include column(22, true); }
+		@include column(22, true); 
+		overflow: hidden; }
 		
 	body.home #banner-container {
 		@include column(24, true);
 		margin-left: -($blueprint-grid-width + $blueprint-grid-margin); 
 		
 		a {
+			margin: 0;
+			padding: 0;
 			display: block;
 			position: relative;
 			text-decoration: none;
+			color: #000;
 			width: 100%;
 			height: 100%; }
 		
@@ -244,7 +248,8 @@ body,
 			@include text-shadow(0px -1px 0px rgba(000,000,000,0.1), 0px 1px 0px rgba(255,255,255,0.5));
 			@include border-radius(4px);				
 			@include transition-property(all);
-			@include transition-duration(0.4s);	
+			@include transition-duration(0.4s);
+			background-color: #fff;
 			background: -moz-linear-gradient(
 				top,
 				#ffffff 0%,
