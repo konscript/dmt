@@ -11,11 +11,25 @@ get_header(); // Loads the header.php template. ?>
 			<div id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
 
 				<div id="banner-container">
+					<a href="materialer">
 					<div id="banner-materials">
-						Materialer
+						<div class="banner-button">Materialer</div>
+						<p>
+							<strong>Kategorier:</strong><br />
+							BRONZE, FILTERBRONZE,<br /> 
+							GLIDELEJER, OVERFLADE-<br />
+							BELÆGNING m.m.</p>						
 					</div>
+					</a>
 					<div id="banner-tools">
-						Værktøjer
+						<a href="vaerktoejer">
+						<div class="banner-button">Værktøjer</div>
+						<p>
+							<strong>Producenter:</strong><br />
+							FACOM, HITACHI,<br /> 
+							SKYDDA, SERENCO<br /> 
+							m.fl.</p>
+						</a>
 					</div>
 				</div>
 				

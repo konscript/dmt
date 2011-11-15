@@ -232,7 +232,47 @@ body,
 		
 	body.home #banner-container {
 		@include column(24, true);
-		margin-left: -($blueprint-grid-width + $blueprint-grid-margin); }
+		margin-left: -($blueprint-grid-width + $blueprint-grid-margin); 
+		
+		a {
+			display: block;
+			position: relative;
+			text-decoration: none;
+			width: 100%;
+			height: 100%; }
+		
+		.banner-button {
+			@include box-shadow(0px 1px 4px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,1));
+			@include text-shadow(0px -1px 0px rgba(000,000,000,0.2), 0px 1px 0px rgba(255,255,255,1));
+			@include border-radius(4px);				
+			@include transition-property(all);
+			@include transition-duration(0.5s);	
+			background: -moz-linear-gradient(
+				top,
+				#ffffff 0%,
+				#ebebeb 50%,
+				#dbdbdb 50%,
+				#b5b5b5);
+			background: -webkit-gradient(
+				linear, left top, left bottom, 
+				from(#ffffff),
+				color-stop(0.50, #ebebeb),
+				color-stop(0.50, #dbdbdb),
+				to(#b5b5b5));
+			position: absolute;
+			color: #050505;
+			border: 1px solid #949494;
+			padding: 10px 20px;
+			font-size: 2.5em; 
+			text-decoration: none;
+			color: #000; }
+			
+			.banner-button:hover {
+				@include box-shadow(0px 1px 6px rgba(000,000,000,0.4), inset 0px 0px 1px rgba(255,255,255,1));
+				@include transition-property(all);
+				@include transition-duration(0.5s);
+				color: red; }
+		}
 		
 		#banner {
 			@include single-box-shadow(#000, 0, 7px, 10px, -10px, true);
@@ -249,19 +289,51 @@ body,
 
 		body.home #banner-materials {
 			@include column(12);
-			background-image: url('../../graphics/home_banner-texture.png');
+			position: relative;
+			background-image: url('../../graphics/home_materials-texture.png');
 			background-color: transparent;
 			background-position: left top;
 			box-shadow: none;
-			height: 278px; }
+			height: 275px; 
+			
+			.banner-button {
+				top: 30px;
+				right: 30px;
+				text-align: right; }
+				
+				p {
+					display: block;
+					position: absolute;
+					font-size: 13px;
+					top: 120px;
+					right: 30px;
+					color: #000;
+					text-align: right; }
+			}
+			
 
 		body.home #banner-tools {
-			@include column(12, true);			
-			background-image: url('../../graphics/home_banner-texture.png');
+			@include column(12, true);
+			position: relative;		
+			background-image: url('../../graphics/home_tools-texture.png');
 			background-color: transparent;
 			background-position: left top;
 			box-shadow: none;
-			height: 278px; }
+			height: 275px;
+			
+			.banner-button {
+				top: 30px;
+				left: 30px;
+				text-align: left; }
+				
+			p {
+				display: block;
+				position: absolute;
+				font-size: 13px;
+				top: 120px;
+				left: 30px;
+				color: #000; }
+			}
 
 
 /**
@@ -316,12 +388,12 @@ body,
 			.error-404-title {}
 
 			.entry-title a {
-				@include single-text-shadow(white, 0, 1px, 2px);
+				@include single-text-shadow(white, 0, 1px, 1px);
 				font-family: $customfont;
-				text-transform: uppercase;
+				//text-transform: uppercase;
 				color: #000;
 				text-decoration: none;
-				font-size: 28px; }
+				font-size: 34px; }
 
 			// Author and date byline
 			.byline {}
@@ -588,13 +660,13 @@ body,
     	 }
      }
      
-     /**
+		/**
  	 * 3.4 Product Category taxonomy page content
  	 ************************************************/
- 	 .product-category-content {
- 	     width: 100%; 
- 	     margin-left: 7px;
- 	 }
+	.product-category-content {
+		@include column(22, true);
+		width: 100%; 
+		margin-left: 7px; }
  	 
  	 .product-category-call-to-action {
  	     @include column(21);
