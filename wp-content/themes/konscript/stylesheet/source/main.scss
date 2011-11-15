@@ -14,9 +14,7 @@ $blueprint-font-size: 12px;
 
 // Default blueprint setup on the body
 body.bp {
-  @include blueprint-utilities;
-  @include blueprint-debug;
-  @include blueprint-interaction; }
+  @include blueprint-utilities; }
 
 // Default blueprint setup for forms
 form.bp {
@@ -243,10 +241,10 @@ body,
 		
 		.banner-button {
 			@include box-shadow(0px 1px 4px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,1));
-			@include text-shadow(0px -1px 0px rgba(000,000,000,0.2), 0px 1px 0px rgba(255,255,255,1));
+			@include text-shadow(0px -1px 0px rgba(000,000,000,0.1), 0px 1px 0px rgba(255,255,255,0.5));
 			@include border-radius(4px);				
 			@include transition-property(all);
-			@include transition-duration(0.5s);	
+			@include transition-duration(0.4s);	
 			background: -moz-linear-gradient(
 				top,
 				#ffffff 0%,
@@ -269,9 +267,17 @@ body,
 			
 			.banner-button:hover {
 				@include box-shadow(0px 1px 6px rgba(000,000,000,0.4), inset 0px 0px 1px rgba(255,255,255,1));
+				@include text-shadow(0px -1px 0px rgba(000,000,000,0.2), 0px 1px 0px rgba(255,255,255,1));				
 				@include transition-property(all);
-				@include transition-duration(0.5s);
+				@include transition-duration(0.4s);
 				color: red; }
+
+			.banner-button:active {
+				@include box-shadow(0px 1px 2px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,1));
+				@include text-shadow(0px 0px 0px rgba(000,000,000,0), 0px 0px 0px rgba(255,255,255,0));				
+				@include transition-property(all);
+				@include transition-duration(0.2s); }
+
 		}
 		
 		#banner {
@@ -598,7 +604,7 @@ body,
     	     background: #FCFCFC;
     	     margin-top: 30px;
     	     font-size: 1.5em;
-    	     @include border-radius(5px);
+    	     @include border-radius(4px);
     	     
     	     > a {
     	         text-decoration: none;
@@ -626,7 +632,7 @@ body,
 	 
     	 #product-call-to-action {
     	     border: 1px solid #AAA;
-    	     @include border-radius(5px);
+    	     @include border-radius(4px);
     	     @include box-shadow(gray 2px 2px 5px);
     	     
     	     margin-top: 20px;
@@ -652,7 +658,7 @@ body,
             border: 1px solid #AAA;
             background-color: #F5F5F5;
             @include box-shadow(gray 2px 2px 5px);
-            @include border-radius(5px);
+            @include border-radius(4px);
     	 }
     	 
     	 #product-content-header {
@@ -665,20 +671,15 @@ body,
  	 ************************************************/
 	.product-category-content {
 		@include column(22, true);
-		width: 100%; 
-		margin-left: 7px; }
+		width: 100%; }
  	 
  	 .product-category-call-to-action {
- 	     @include column(21);
- 	     padding: 10px;
- 	     border: 1px solid;
- 	     @include border-radius(5px);
- 	     margin-top: 10px;
- 	     margin-bottom: 5px;
- 	     margin-left: auto;
- 	     margin-right: auto;
- 	     background-color: #F0F0F0;
- 	     
+ 	     @include column(22, true);
+ 	     @include border-radius(4px);
+ 	     border: 1px solid #BCBCBC;
+ 	     margin: 15px 0;
+			 padding: 5px 0;
+ 	     background-color: #e2ffbc;
  	     font-size: 1.4em;
  	     text-align: center;
  	     
@@ -694,8 +695,8 @@ body,
  	     
  	     .product-category-product-image-container {
  	         width: 100%;
-             border: 1px solid #000;
-             @include border-radius(5px);
+             border: 1px solid #BCBCBC;
+             @include border-radius(4px);
              
              .product-category-product-image {
                  width: 70px;
@@ -710,19 +711,18 @@ body,
  	     > a {
  	         text-decoration: none;
  	         color: #000;
- 	         @include single-text-shadow(white, 0, 2px, 1px);
+ 	         @include single-text-shadow(white, 0, 1px, 1px);
  	         &:active {
  	             @include single-text-shadow(white, 0, 0px, 0px);
  	         }
  	         &:hover {
- 	             > div { border-color: #000; }
  	             color: #0079c2;
  	         }
  	     }
  	     
  	     .product-category-product-title {
- 	         border: 1px solid #000;
- 	         @include border-radius(5px);
+ 	         border: 1px solid #BCBCBC;
+ 	         @include border-radius(4px);
  	         background-color: #DDD;
  	         
  	         width: 100%;
@@ -741,8 +741,8 @@ body,
  	       
      	 .product-category-product-data {
      	     width: 93%;
-     	     border: 1px solid #000;
-     	     @include border-radius(5px);
+     	     border: 1px solid #BCBCBC;
+     	     @include border-radius(4px);
      	     z-index: 1;
      	     margin-left: 10px;
      	     overflow: auto;
@@ -845,32 +845,28 @@ body,
  	 * 3.6 Tools front page
  	 ************************************************/
  	 .tools-front-content {
- 	     @include column(22);
+ 	     @include column(22, true);
  	     
  	     .tools-front-left-column {
- 	         @include column(13);
- 	         float: left;
- 	         margin-top: 10px;
+ 	         @include column(14);
+ 	         @include append(1);
+ 	         margin-top: 20px;
  	     }
  	     
  	     .tools-front-right-column {
- 	         @include column(8);
- 	         float: right;
- 	         padding-top: 10px;
- 	         padding-left: 30px;
+				  @include column(7, true);
+         	margin-top: 20px;
  	         
  	         > a { text-decoration: none; }
  	         
  	         #tools-front-manufacturers {
- 	             float: left;
+             @include border-radius(4px);
+             @include column(7, true);
  	             border: 1px solid #DDD;
- 	             @include border-radius(5px);
- 	             @include column(7);
  	             height: 150px;
  	             
  	             #tools-front-manufacturers-title {
- 	                 @include border-top-left-radius(5px);
-        	         @include border-top-right-radius(5px);
+									 padding: 3px 0;
  	                 width: 100%;
  	                 background: #DDD;
  	                 
@@ -900,17 +896,14 @@ body,
  	         }
  	         
  	         #tools-front-tilbud {
- 	             float: left;
- 	             @include column(7);
+ 	             @include column(7, true);
+ 	             @include border-radius(4px);
  	             border: 1px solid #DDD;
- 	             @include border-radius(5px);
- 	             margin-top: 40px;
+ 	             margin-top: 20px;
  	             
  	             > a { text-decoration: none; }
  	             
  	             #tools-front-tilbud-title {
- 	                 @include border-top-left-radius(5px);
-        	         @include border-top-right-radius(5px);
  	                 width: 100%;
  	                 background: #DDD;
  	                 
@@ -962,17 +955,16 @@ body,
   	     @include column(22);
   	     margin-top: 10px;
   	 }
-  	 
-  	 #materials-front-left-column {
-  	     @include column(13);
-  	     float: left;
-  	 }
-  	 
-  	 #materials-front-right-column {
-  	     @include column(8);
-  	     float: right;
-  	 }
- 	 
+
+     #materials-front-left-column {
+         @include column(14);
+         @include append(1);
+         margin-top: 20px;
+     }
+     
+     #materials-front-right-column {
+			  @include column(7, true);
+       	margin-top: 20px; }
 
 /**
  * 4. Footer
