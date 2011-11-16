@@ -35,6 +35,7 @@ $customfont: arial, sans-serif;
 @mixin box {
 	@include border-radius(4px);
 	@include dropshadow(); 
+	margin-bottom: 20px;
 	display: block;
 	position: relative;
 	background: #fff;

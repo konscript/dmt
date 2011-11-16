@@ -398,7 +398,7 @@ body,
 			.attachment-title {}
 			.error-404-title {}
 
-			.entry-title a {
+			.entry-title a, h1.entry-title {
 				@include single-text-shadow(white, 0, 1px, 1px);
 				font-family: $customfont;
 				//text-transform: uppercase;
@@ -822,8 +822,8 @@ body,
      	 * 3.5.1 Template Name: Tilbud content
      	 ************************************************/
      	 #tilbud-embedded {
-     	     @include column(22);
-     	     height: 500px;
+     	     @include column(22, true);
+     	     height: 750px;
      	     padding-top: 5px;
  	         padding-bottom: 30px;
  	         
@@ -1001,7 +1001,6 @@ body,
 		background-color: #cdf8cd;
 		font-size: 1.2em;
 		text-align: center;
-		margin: 20px 0 20px 0;
 		
 	  //background: #ddd;
 	  color: rgba(0,0,0, 1);
@@ -1077,6 +1076,62 @@ body,
 		        }
 		    }
 		}
+	}
+	
+	#footer-products {
+		@include column(10);	
+
+		.footer-products-text {
+			@include column(10, true);
+			margin: 10px 0;
+			font-style: italic;
+			font-weight: bold;
+		}
+		
+		.footer-button {
+			@include border-radius(4px);				
+			@include transition-property(all);
+			@include transition-duration(0.4s);
+			float: left;
+			background-color: #fff;
+			background: -moz-linear-gradient(
+				top,
+				#ffffff 0%,
+				#ebebeb 50%,
+				#dbdbdb 50%,
+				#b5b5b5);
+			background: -webkit-gradient(
+				linear, left top, left bottom, 
+				from(#ffffff),
+				color-stop(0.50, #ebebeb),
+				color-stop(0.50, #dbdbdb),
+				to(#b5b5b5));
+			color: #050505;
+			border: 1px solid #949494;
+			padding: 5px 10px;
+			margin-right: 10px;
+
+			font-size: 1em; 
+			text-decoration: none;
+			color: #000; }
+			
+			.footer-button:hover {
+				@include transition-property(all);
+				@include transition-duration(0.4s);
+				color: red; }
+
+		.first {
+			clear: left;
+		}
+
+	}
+
+	#footer-info {
+		@include column(14,true);
+		margin: 20px 0 0 0;
+		text-align: right;
+		div { float: right; width: auto; margin-top: 7px; }
+		img { float: right; width: 85px; margin-left: 20px; }
 	}
 		
 /**
