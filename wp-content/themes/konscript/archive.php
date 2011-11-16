@@ -5,25 +5,36 @@
  */
 
 get_header(); // Loads the header.php template. ?>
+    
+    <?php // Get taxonomy term - values: term_id name slug term_group term_taxonomy_id taxonomy description parent count
+    // Get ID for "Nyheder" page
+    $slug = 'nyheder';
+    $args = array('name' => $slug, 'post_type' => 'page', 'post_status' => 'publish', 'caller_get_posts'=> 1 );
+    $page = get_posts($args); ?>
 
 	<div id="content" class="hfeed content">
-	    <?php // Get taxonomy term - values: term_id name slug term_group term_taxonomy_id taxonomy description parent count ?>
-	    <?php // Get ID for "Nyheder" page
-        $slug = 'nyheder';
-        $args = array('name' => $slug, 'post_type' => 'page', 'post_status' => 'publish', 'caller_get_posts'=> 1 );
-        $page = get_posts($args); ?>
 	    <!-- Title banner -->
 		<div id="banner-container">
 		    <div id="banner">
 			    <h1 class="page-title entry-title">
-                    <a href="<?php echo $_SERVER['REQUEST_URI']; ?>" title="<?php echo $page[0]->post_title; ?>" rel="bookmark"><?php echo $page[0]->post_title; ?></a>
+                    <a href="<?php echo $_SERVER['REQUEST_URI']; ?>" title="<?php echo $page[0]->post_title; ?>" rel="bookmark">
+                    <?php if (is_tag()): ?>
+                        <?php echo single_tag_title('Tag: '); ?>
+                    <?php elseif (is_category()): ?>
+                        <?php echo single_cat_title(); ?>
+                    <?php elseif (is_author()): ?>
+                        <?php $author = get_userdata( get_query_var('author') ); ?>
+                        <?php echo "Forfatter: " . $author->display_name; ?>                        
+                    <?php else: ?>
+                        <?php echo $page[0]->post_title; ?>
+                    <?php endif; ?>
+                    </a>
                 </h1>
 		    </div>
 		</div>
 		<!-- /Title banner -->
 
-        <!-- spacer -->
-		<div>&nbsp;</div><?php //do_atomic( 'breadcrumb' ); // breadcrumb trail ?>
+		<a href="<?php echo get_permalink($page[0]->ID); ?>">Gå til nyhedsoversigten</a>
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
