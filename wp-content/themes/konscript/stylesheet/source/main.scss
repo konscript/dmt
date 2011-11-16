@@ -1022,7 +1022,7 @@ body,
 	background-color: #dddddd;
 	background-position: center top; 
 	margin-top: -80px;
-	height: 93px; }
+	height: 80px; }
 	
 	body.dmt-area-tools #footer-container {
 		background-image: url('../../graphics/tools_footer-texture.png');
@@ -1083,12 +1083,13 @@ body,
 
 		.footer-products-text {
 			@include column(10, true);
-			margin: 10px 0;
+			margin: 7px 0;
 			font-style: italic;
 			font-weight: bold;
 		}
 		
 		.footer-button {
+			@include opacity(0.5);
 			@include border-radius(4px);				
 			@include transition-property(all);
 			@include transition-duration(0.4s);
@@ -1116,6 +1117,7 @@ body,
 			color: #000; }
 			
 			.footer-button:hover {
+				@include opacity(1);
 				@include transition-property(all);
 				@include transition-duration(0.4s);
 				color: red; }
@@ -1128,7 +1130,7 @@ body,
 
 	#footer-info {
 		@include column(14,true);
-		margin: 20px 0 0 0;
+		margin: 10px 0 0 0;
 		text-align: right;
 		div { float: right; width: auto; margin-top: 7px; }
 		img { float: right; width: 85px; margin-left: 20px; }

@@ -12,7 +12,7 @@ get_header(); // Loads the header.php template. ?>
 
 				<div id="banner-container">
 					<div id="banner-materials">
-						<a href="materialer">
+						<a href="<?php echo get_bloginfo('siteurl'); ?>/materialer">
 						<div class="banner-button">Materialer</div>
 						<p>
 							<strong>Kategorier:</strong><br />
@@ -22,7 +22,7 @@ get_header(); // Loads the header.php template. ?>
 						</a>
 					</div>
 					<div id="banner-tools">
-						<a href="vaerktoejer">
+						<a href="<?php echo get_bloginfo('siteurl'); ?>/vaerktoejer">
 						<div class="banner-button">Værktøjer</div>
 						<p>
 							<strong>Producenter:</strong><br />
