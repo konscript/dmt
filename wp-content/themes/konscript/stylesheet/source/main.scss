@@ -462,7 +462,8 @@ body,
 
 		// Homepage widget section
 		#home-widgetzone {
-			@include column(11, true);			
+			@include column(11, true);
+			margin-top: 20px;
 			
 			.widget {
 				@include column(5); 
@@ -863,14 +864,17 @@ body,
  	         
  	         > a { text-decoration: none; }
  	         
- 	         #tools-front-manufacturers {
-             @include border-radius(4px);
+ 	         #tools-front-manufacturers {            
+						@include border-radius(4px);
              @include column(7, true);
+						@include dropshadow(); 
+							background: #fff;
  	             border: 1px solid #DDD;
  	             height: 150px;
+
  	             
  	             #tools-front-manufacturers-title {
-									 padding: 3px 0;
+									 padding: 5px 0;
  	                 width: 100%;
  	                 border-bottom: 1px solid #DDD;
  	                 
@@ -902,13 +906,15 @@ body,
  	         #tools-front-tilbud {
  	             @include column(7, true);
  	             @include border-radius(4px);
+							@include dropshadow();
+							background: #fff;
  	             border: 1px solid #DDD;
  	             margin-top: 20px;
  	             
  	             > a { text-decoration: none; }
  	             
  	             #tools-front-tilbud-title {
-								 	 padding: 3px 0;
+								 	 padding: 5px 0;
  	                 width: 100%;
  	                 border-bottom: 1px solid #DDD;
  	                 
@@ -972,13 +978,14 @@ body,
  	         > a { text-decoration: none; }
 
  	         #materials-front-manufacturers {
-             @include border-radius(4px);
-             @include column(7, true);
- 	           border: 1px solid #DDD;
- 	           //height: 150px;
+            @include border-radius(4px);
+            @include column(7, true);
+						@include dropshadow();
+ 	          border: 1px solid #DDD;
+						background: #fff;
 
  	             #materials-front-manufacturers-title {
-									 padding: 3px 0;
+									 padding: 5px 0;
  	                 width: 100%;
  	                 border-bottom: 1px solid #DDD;
 
@@ -996,6 +1003,31 @@ body,
 						}
 					}
 
+
+	/**
+	 * 3. Homepage content/widgets
+	 ************************************************/
+
+	.box-call-to-action {
+		@include border-radius(4px);
+		@include dropshadow();
+		//@include box-shadow(gray 2px 2px 5px);
+	  position: relative;
+		border: 1px solid #c0c0c0;
+		background-color: #cdf8cd;
+		font-size: 1.2em;
+		text-align: center;
+		margin: 0 0 20px 0;
+		
+	  //background: #ddd;
+	  color: rgba(0,0,0, 1);
+	  text-shadow: 0 1px 0 rgba(255,255,255, 0.5);		
+		
+		> div { display: block; padding: 20px; }
+    > a { text-decoration: none; }
+
+		
+	}
 
 /**
  * 4. Footer

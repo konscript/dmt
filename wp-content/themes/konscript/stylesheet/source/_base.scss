@@ -30,3 +30,33 @@ $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $b
 $customfont: arial, sans-serif;
 
 // Custom mixins goes here
+@mixin dropshadow {
+	position: relative;
+	&:before, &:after {
+	  z-index: -1;
+	  position: absolute;
+	  content: "";
+	  bottom: 15px;
+	  left: 5px;
+	  width: 40%;
+		height: auto;
+	  top: 0;
+	  //max-width:300px;
+	  background: rgba(0, 0, 0, 0);
+	  -webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.25);
+	  -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.25);
+	  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.25);
+	  -webkit-transform: rotate(-3deg);
+	  -moz-transform: rotate(-3deg);
+	  -o-transform: rotate(-3deg);
+	  -ms-transform: rotate(-3deg);
+	  transform: rotate(-3deg); }
+	&:after {
+	  -webkit-transform: rotate(3deg);
+	  -moz-transform: rotate(3deg);
+	  -o-transform: rotate(3deg);
+	  -ms-transform: rotate(3deg);
+	  transform: rotate(3deg);
+	  right: 5px;
+	  left: auto; }	
+}

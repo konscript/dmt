@@ -41,7 +41,13 @@ get_header(); // Loads the header.php template. ?>
 			</div><!-- .hentry -->
 			
 			<div id="home-widgetzone" class="widgetzone">
-				<?php dynamic_sidebar( 'homepage' ); ?>
+				<?php //dynamic_sidebar( 'homepage' ); ?>
+		    <div class="box-call-to-action">
+		        <div class="box-call-to-action-inner">
+							Tlf. <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a><br />
+							for bestilling og konsultation
+						</div>
+		    </div>
 			</div>
 				
 			<?php endwhile; ?>
