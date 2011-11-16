@@ -9,6 +9,13 @@
     </div>
     
     <div id="materials-front-right-column">
-        <?php the_field('right_column'); ?>
+	    <div id="materials-front-manufacturers">
+	      <div id="materials-front-manufacturers-title">
+					<span>Vores hovedleverandører</span>
+	      </div>
+		    <div id="materials-front-manufacturers-content">
+        	<?php the_field('right_column'); ?>
+				</div>
+			</div>
     </div>
 </div>

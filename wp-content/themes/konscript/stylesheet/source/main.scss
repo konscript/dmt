@@ -354,7 +354,7 @@ body,
 // Contains site's main content
 #content-container {
 	@include container;
-	overflow:auto;
+	overflow: hidden;
 	padding-bottom: 80px; }
 	
 	#content {
@@ -851,16 +851,15 @@ body,
  	 ************************************************/
  	 .tools-front-content {
  	     @include column(22, true);
+ 	         margin: 20px 0;
  	     
  	     .tools-front-left-column {
  	         @include column(14);
  	         @include append(1);
- 	         margin-top: 20px;
  	     }
  	     
  	     .tools-front-right-column {
 				  @include column(7, true);
-         	margin-top: 20px;
  	         
  	         > a { text-decoration: none; }
  	         
@@ -873,7 +872,7 @@ body,
  	             #tools-front-manufacturers-title {
 									 padding: 3px 0;
  	                 width: 100%;
- 	                 background: #DDD;
+ 	                 border-bottom: 1px solid #DDD;
  	                 
  	                 > span {
  	                     color: #000;
@@ -909,8 +908,9 @@ body,
  	             > a { text-decoration: none; }
  	             
  	             #tools-front-tilbud-title {
+								 	 padding: 3px 0;
  	                 width: 100%;
- 	                 background: #DDD;
+ 	                 border-bottom: 1px solid #DDD;
  	                 
  	                 > span {
  	                     color: #000;
@@ -958,18 +958,44 @@ body,
   	 ************************************************/
   	 .materials-front-content {
   	     @include column(22);
-  	     margin-top: 10px;
+  	     margin: 20px 0;
   	 }
 
      #materials-front-left-column {
          @include column(14);
          @include append(1);
-         margin-top: 20px;
      }
      
      #materials-front-right-column {
 			  @include column(7, true);
-       	margin-top: 20px; }
+
+ 	         > a { text-decoration: none; }
+
+ 	         #materials-front-manufacturers {
+             @include border-radius(4px);
+             @include column(7, true);
+ 	           border: 1px solid #DDD;
+ 	           //height: 150px;
+
+ 	             #materials-front-manufacturers-title {
+									 padding: 3px 0;
+ 	                 width: 100%;
+ 	                 border-bottom: 1px solid #DDD;
+
+ 	                 > span {
+ 	                     color: #000;
+ 	                     padding-left: 10px;
+ 	                     font-size: 1.3em;
+ 	                 } 
+ 	             }
+
+ 	             #materials-front-manufacturers-content {
+								padding: 10px;
+								}
+
+						}
+					}
+
 
 /**
  * 4. Footer
