@@ -18,7 +18,6 @@ get_header(); ?>
 				<?php do_atomic( 'entry_header' ); ?>
     			<div class="entry-content">
     			    <div id="product-left-column">
-    			        <?php echo get_the_term_list($post->ID, 'product-categories', 'Produktkategori: ', ', ', ''); ?>
     			        <?php if (get_field('image_1')): ?>
         				<div id="product-image-container">
         				    <div id="product-main-image-container">
@@ -41,19 +40,24 @@ get_header(); ?>
         				    <?php the_content(); ?>
         				</div>
         				<div id="product-data">
-        				    <div id="product-data-header">Hent materialedata</div>
+        				    <div id="product-data-header"><span>Hent materialedata</span></div>
 			                <a href="<?php the_field('data_sheet'); ?>"><?php echo basename(get_field('data_sheet')); ?> <img id="product-data-icon" src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon.png" /></a>
         				</div>
-        				<div id="product-call-to-action">
-        				    Bestil på <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a>
-        				</div>
+								<br /><br />
+  			        <?php echo get_the_term_list($post->ID, 'product-categories', 'Produktkategori: ', ', ', ''); ?>
     				</div>
     				<div id="product-right-column">
-    				    <div id="product-content-header">Specifikationer</div>
         				<div id="product-content">
+    				    <div id="product-content-header"><span>Specifikationer></span></div>
         					<?php the_field('product_specifications'); ?>
         					<?php wp_link_pages( array( 'before' => '<p class="page-links pages">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
         				</div>
+						    <div class="box-call-to-action">
+						        <div class="box-call-to-action-inner">
+											Tlf. <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a><br />
+											for bestilling og konsultation
+										</div>
+						    </div>
     				</div>
 				</div>
 				<?php do_atomic( 'entry_footer' ); ?>

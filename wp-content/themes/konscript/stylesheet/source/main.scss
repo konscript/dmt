@@ -172,8 +172,8 @@ body,
 					background-color: #dddddd;
 					border: 1px solid #bcbcbc; 
 					border-top: none; 
+					z-index: 100;
 					}
-					
 
 					ul ul li {
 						text-align: left;
@@ -545,19 +545,20 @@ body,
 	 * 3.3 Product single page content
 	 ************************************************/
 	 
-	 // Left column
-	 #product-left-column {
-	     float: left;
-	     @include column(12);
+	// Left column
+	#product-left-column {
+		@include column(12);
+		@include append(1);	
 	     
-    	 #product-image-container {
-    	     overflow: auto;
+		#product-image-container {
+    	     overflow: hidden;
              
              #product-main-image-container {
-                 @include column(10);
-                 background: url('../../graphics/product_gallery-bg-img.png') no-repeat 0 0;
-                 background-size: 100%;
-                 padding: 26px;
+								@include box;
+								
+                 //background: url('../../graphics/product_gallery-bg-img.png') no-repeat 0 0;
+                 //background-size: 100%;
+                 //padding: 26px;
                  //min-height: 200px;
                                   
                  > img {
@@ -606,12 +607,7 @@ body,
     	 }
 	 
     	 #product-data {
-    	     border: 1px solid #AAA;
-    	     background: #FCFCFC;
-    	     margin-top: 30px;
-    	     font-size: 1.5em;
-    	     @include border-radius(4px);
-    	     
+    	 		@include box;
     	     > a {
     	         text-decoration: none;
     	         padding-left: 10px;
@@ -619,11 +615,7 @@ body,
     	     }
     	     
     	     #product-data-header {
-    	         @include border-top-left-radius(5px);
-    	         @include border-top-right-radius(5px);
-    	         background-color: #EEE;
-    	         padding-left: 7px;
-    	         margin-bottom: 2px;
+							@include box-header;
     	     }
     	     
     	     #product-data-icon {
@@ -656,19 +648,15 @@ body,
 	 
 	 // Right column
 	 #product-right-column {
-	     float: right;
-	     margin-left: 30px;
-	     @include column(9);
+	     @include column(9, true);
 	     
     	 #product-content {
-            border: 1px solid #AAA;
-            background-color: #F5F5F5;
-            @include box-shadow(gray 2px 2px 5px);
-            @include border-radius(4px);
+				@include column(9, true);
+				@include box;
     	 }
     	 
     	 #product-content-header {
-    	     font-size: 1.5em;
+    	     @include box-header;
     	 }
      }
      
@@ -865,18 +853,14 @@ body,
  	         > a { text-decoration: none; }
  	         
  	         #tools-front-manufacturers {            
-						@include border-radius(4px);
-             @include column(7, true);
-						@include dropshadow(); 
-							background: #fff;
- 	             border: 1px solid #DDD;
+						@include box;
+						@include column(7, true);
+						
  	             height: 150px;
 
  	             
  	             #tools-front-manufacturers-title {
-									 padding: 5px 0;
- 	                 width: 100%;
- 	                 border-bottom: 1px solid #DDD;
+								@include box-header;
  	                 
  	                 > span {
  	                     color: #000;
@@ -914,9 +898,7 @@ body,
  	             > a { text-decoration: none; }
  	             
  	             #tools-front-tilbud-title {
-								 	 padding: 5px 0;
- 	                 width: 100%;
- 	                 border-bottom: 1px solid #DDD;
+								@include box-header;
  	                 
  	                 > span {
  	                     color: #000;
@@ -1009,15 +991,17 @@ body,
 	 ************************************************/
 
 	.box-call-to-action {
-		@include border-radius(4px);
-		@include dropshadow();
-		//@include box-shadow(gray 2px 2px 5px);
+		@include box;
+		@include dropshadow;
+		//@include column(7, true);
+		float: left;
+		width: 100%;
+		height: 82px;
 	  position: relative;
-		border: 1px solid #c0c0c0;
 		background-color: #cdf8cd;
 		font-size: 1.2em;
 		text-align: center;
-		margin: 0 0 20px 0;
+		margin: 20px 0 20px 0;
 		
 	  //background: #ddd;
 	  color: rgba(0,0,0, 1);

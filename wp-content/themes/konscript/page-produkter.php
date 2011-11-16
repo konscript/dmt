@@ -7,10 +7,8 @@ get_header(); // Loads the header.php template. ?>
 	<div id="content" class="hfeed content">
 		<?php do_atomic( 'entry_header' ); ?>
 		<div class="product-category-content">
-		    <div class="product-category-call-to-action">
-		        Kontakt os på <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a> for bestilling eller konsultation
-		    </div>
-            <?php query_posts(array( 'post_type'=>'products', 'orderby'=>'title', 'order'=>'ASC' ) ); ?>
+
+	          <?php query_posts(array( 'post_type'=>'products', 'orderby'=>'title', 'order'=>'ASC' ) ); ?>
             <?php $productsperrow = 3; $pc = 1; ?>
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <!-- Products go here! -->

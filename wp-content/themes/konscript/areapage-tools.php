@@ -16,8 +16,7 @@
 					Tlf. <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a><br />
 					for bestilling og konsultation
 				</div>
-    </div>
-		
+    </div>		
 		
 	    <?php
         // Get ID for "Produkter" page

@@ -27,9 +27,32 @@ $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $b
 @include font-face("Futura", font-files("../../../other/futura.ttf", truetype, "../../../other/futura.otf", opentype, "../../../other/futura.svg", svg));
 
 // Global constants and variables goes here (re-usable colors, default sizes etc.)
+
 $customfont: arial, sans-serif;
 
 // Custom mixins goes here
+
+@mixin box {
+	@include border-radius(4px);
+	@include dropshadow(); 
+	display: block;
+	position: relative;
+	background: #fff;
+	border: 1px solid #DDD;
+}
+
+@mixin box-header {
+	@include background-image(linear-gradient(#fff, #e1e1e1));
+	background-color: #F2F2F2;
+	padding: 5px 0;
+  width: 100%;
+	> span {
+		padding-left: 10px;
+		font-size: 1.3em;
+		color: #000;
+	}
+}
+
 @mixin dropshadow {
 	position: relative;
 	&:before, &:after {
@@ -39,8 +62,7 @@ $customfont: arial, sans-serif;
 	  bottom: 15px;
 	  left: 5px;
 	  width: 40%;
-		height: auto;
-	  top: 0;
+		height: 10px;
 	  //max-width:300px;
 	  background: rgba(0, 0, 0, 0);
 	  -webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.25);
