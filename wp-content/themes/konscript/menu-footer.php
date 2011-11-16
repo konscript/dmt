@@ -10,7 +10,7 @@
 
 	<div id="footer-menu-container">
 		<div id="materials-footer-menu">
-		<span class="footer-menu-title">Genveje - Materialer</span>
+		<span class="footer-menu-title">Materialer</span>
 		<?php
 		echo wp_nav_menu(array( 
 			'theme_location' 	=> 'materials-footer', 
@@ -20,7 +20,7 @@
 		?>
 		</div>
 		<div id="tools-footer-menu">
-		<span class="footer-menu-title">Genveje - Værktøjer</span>
+		<span class="footer-menu-title">Værktøjer</span>
 		<?php
 		echo wp_nav_menu(array( 
 			'theme_location' 	=> 'tools-footer', 

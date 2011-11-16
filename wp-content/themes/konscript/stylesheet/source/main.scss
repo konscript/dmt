@@ -14,9 +14,7 @@ $blueprint-font-size: 12px;
 
 // Default blueprint setup on the body
 body.bp {
-  @include blueprint-utilities;
-  @include blueprint-debug;
-  @include blueprint-interaction; }
+  @include blueprint-utilities; }
 
 // Default blueprint setup for forms
 form.bp {
@@ -104,6 +102,10 @@ body,
 		@include column(24, true);
 		margin-top: 15px; }
 	
+		.home .menu-container #top-menu {
+			height: 10px;
+		}	
+	
 	.menu-container {
 	
 		// Wrapper for unordered list of menu items
@@ -170,8 +172,8 @@ body,
 					background-color: #dddddd;
 					border: 1px solid #bcbcbc; 
 					border-top: none; 
+					z-index: 100;
 					}
-					
 
 					ul ul li {
 						text-align: left;
@@ -224,11 +226,64 @@ body,
 
 	// Wrapper for entire menu area
 	#banner-container {
-		@include column(22, true); }
+		@include column(22, true); 
+		overflow: hidden; }
 		
 	body.home #banner-container {
 		@include column(24, true);
-		margin-left: -($blueprint-grid-width + $blueprint-grid-margin); }
+		margin-left: -($blueprint-grid-width + $blueprint-grid-margin); 
+		
+		a {
+			margin: 0;
+			padding: 0;
+			display: block;
+			position: relative;
+			text-decoration: none;
+			color: #000;
+			width: 100%;
+			height: 100%; }
+		
+		.banner-button {
+			@include box-shadow(0px 1px 4px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,1));
+			@include text-shadow(0px -1px 0px rgba(000,000,000,0.1), 0px 1px 0px rgba(255,255,255,0.5));
+			@include border-radius(4px);				
+			@include transition-property(all);
+			@include transition-duration(0.4s);
+			background-color: #fff;
+			background: -moz-linear-gradient(
+				top,
+				#ffffff 0%,
+				#ebebeb 50%,
+				#dbdbdb 50%,
+				#b5b5b5);
+			background: -webkit-gradient(
+				linear, left top, left bottom, 
+				from(#ffffff),
+				color-stop(0.50, #ebebeb),
+				color-stop(0.50, #dbdbdb),
+				to(#b5b5b5));
+			position: absolute;
+			color: #050505;
+			border: 1px solid #949494;
+			padding: 10px 20px;
+			font-size: 2.5em; 
+			text-decoration: none;
+			color: #000; }
+			
+			.banner-button:hover {
+				@include box-shadow(0px 1px 6px rgba(000,000,000,0.4), inset 0px 0px 1px rgba(255,255,255,1));
+				@include text-shadow(0px -1px 0px rgba(000,000,000,0.2), 0px 1px 0px rgba(255,255,255,1));				
+				@include transition-property(all);
+				@include transition-duration(0.4s);
+				color: red; }
+
+			.banner-button:active {
+				@include box-shadow(0px 1px 2px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,1));
+				@include text-shadow(0px 0px 0px rgba(000,000,000,0), 0px 0px 0px rgba(255,255,255,0));				
+				@include transition-property(all);
+				@include transition-duration(0.2s); }
+
+		}
 		
 		#banner {
 			@include single-box-shadow(#000, 0, 7px, 10px, -10px, true);
@@ -243,13 +298,53 @@ body,
 		body.dmt-area-materials #banner {
 			background-image: url('../../graphics/materials_banner-texture.png'); }
 
-		body.home #banner {
-			background-image: url('../../graphics/home_banner-texture.png');
+		body.home #banner-materials {
+			@include column(12);
+			position: relative;
+			background-image: url('../../graphics/home_materials-texture.png');
 			background-color: transparent;
 			background-position: left top;
 			box-shadow: none;
-			width: 100%;
-			height: 278px; }
+			height: 275px; 
+			
+			.banner-button {
+				top: 30px;
+				right: 30px;
+				text-align: right; }
+				
+				p {
+					display: block;
+					position: absolute;
+					font-size: 13px;
+					top: 120px;
+					right: 30px;
+					color: #000;
+					text-align: right; }
+			}
+			
+
+		body.home #banner-tools {
+			@include column(12, true);
+			position: relative;		
+			background-image: url('../../graphics/home_tools-texture.png');
+			background-color: transparent;
+			background-position: left top;
+			box-shadow: none;
+			height: 275px;
+			
+			.banner-button {
+				top: 30px;
+				left: 30px;
+				text-align: left; }
+				
+			p {
+				display: block;
+				position: absolute;
+				font-size: 13px;
+				top: 120px;
+				left: 30px;
+				color: #000; }
+			}
 
 
 /**
@@ -259,7 +354,7 @@ body,
 // Contains site's main content
 #content-container {
 	@include container;
-	overflow:auto;
+	overflow: hidden;
 	padding-bottom: 80px; }
 	
 	#content {
@@ -330,13 +425,13 @@ body,
 			.attachment-title {}
 			.error-404-title {}
 
-			.entry-title a {
-				@include single-text-shadow(white, 0, 1px, 2px);
+			.entry-title a, h1.entry-title {
+				@include single-text-shadow(white, 0, 1px, 1px);
 				font-family: $customfont;
-				text-transform: uppercase;
+				//text-transform: uppercase;
 				color: #000;
 				text-decoration: none;
-				font-size: 28px; }
+				font-size: 34px; }
 
 			// Author and date byline
 			.byline {
@@ -413,7 +508,8 @@ body,
 
 		// Homepage widget section
 		#home-widgetzone {
-			@include column(11, true);			
+			@include column(11, true);
+			margin-top: 20px;
 			
 			.widget {
 				@include column(5); 
@@ -553,19 +649,20 @@ body,
 	 * 3.3 Product single page content
 	 ************************************************/
 	 
-	 // Left column
-	 #product-left-column {
-	     float: left;
-	     @include column(12);
+	// Left column
+	#product-left-column {
+		@include column(12);
+		@include append(1);	
 	     
-    	 #product-image-container {
-    	     overflow: auto;
+		#product-image-container {
+    	     overflow: hidden;
              
              #product-main-image-container {
-                 @include column(10);
-                 background: url('../../graphics/product_gallery-bg-img.png') no-repeat 0 0;
-                 background-size: 100%;
-                 padding: 26px;
+								@include box;
+								
+                 //background: url('../../graphics/product_gallery-bg-img.png') no-repeat 0 0;
+                 //background-size: 100%;
+                 //padding: 26px;
                  //min-height: 200px;
                                   
                  > img {
@@ -614,12 +711,7 @@ body,
     	 }
 	 
     	 #product-data {
-    	     border: 1px solid #AAA;
-    	     background: #FCFCFC;
-    	     margin-top: 30px;
-    	     font-size: 1.5em;
-    	     @include border-radius(5px);
-    	     
+    	 		@include box;
     	     > a {
     	         text-decoration: none;
     	         padding-left: 10px;
@@ -627,11 +719,7 @@ body,
     	     }
     	     
     	     #product-data-header {
-    	         @include border-top-left-radius(5px);
-    	         @include border-top-right-radius(5px);
-    	         background-color: #EEE;
-    	         padding-left: 7px;
-    	         margin-bottom: 2px;
+							@include box-header;
     	     }
     	     
     	     #product-data-icon {
@@ -646,7 +734,7 @@ body,
 	 
     	 #product-call-to-action {
     	     border: 1px solid #AAA;
-    	     @include border-radius(5px);
+    	     @include border-radius(4px);
     	     @include box-shadow(gray 2px 2px 5px);
     	     
     	     margin-top: 20px;
@@ -664,41 +752,32 @@ body,
 	 
 	 // Right column
 	 #product-right-column {
-	     float: right;
-	     margin-left: 30px;
-	     @include column(9);
+	     @include column(9, true);
 	     
     	 #product-content {
-            border: 1px solid #AAA;
-            background-color: #F5F5F5;
-            @include box-shadow(gray 2px 2px 5px);
-            @include border-radius(5px);
+				@include column(9, true);
+				@include box;
     	 }
     	 
     	 #product-content-header {
-    	     font-size: 1.5em;
+    	     @include box-header;
     	 }
      }
      
-     /**
+		/**
  	 * 3.4 Product Category taxonomy page content
  	 ************************************************/
- 	 .product-category-content {
- 	     width: 100%; 
- 	     margin-left: 7px;
- 	 }
+	.product-category-content {
+		@include column(22, true);
+		width: 100%; }
  	 
  	 .product-category-call-to-action {
- 	     @include column(21);
- 	     padding: 10px;
- 	     border: 1px solid;
- 	     @include border-radius(5px);
- 	     margin-top: 10px;
- 	     margin-bottom: 5px;
- 	     margin-left: auto;
- 	     margin-right: auto;
- 	     background-color: #F0F0F0;
- 	     
+ 	     @include column(22, true);
+ 	     @include border-radius(4px);
+ 	     border: 1px solid #BCBCBC;
+ 	     margin: 15px 0;
+			 padding: 5px 0;
+ 	     background-color: #e2ffbc;
  	     font-size: 1.4em;
  	     text-align: center;
  	     
@@ -714,8 +793,8 @@ body,
  	     
  	     .product-category-product-image-container {
  	         width: 100%;
-             border: 1px solid #000;
-             @include border-radius(5px);
+             border: 1px solid #BCBCBC;
+             @include border-radius(4px);
              
              .product-category-product-image {
                  width: 70px;
@@ -730,19 +809,18 @@ body,
  	     > a {
  	         text-decoration: none;
  	         color: #000;
- 	         @include single-text-shadow(white, 0, 2px, 1px);
+ 	         @include single-text-shadow(white, 0, 1px, 1px);
  	         &:active {
  	             @include single-text-shadow(white, 0, 0px, 0px);
  	         }
  	         &:hover {
- 	             > div { border-color: #000; }
  	             color: #0079c2;
  	         }
  	     }
  	     
  	     .product-category-product-title {
- 	         border: 1px solid #000;
- 	         @include border-radius(5px);
+ 	         border: 1px solid #BCBCBC;
+ 	         @include border-radius(4px);
  	         background-color: #DDD;
  	         
  	         width: 100%;
@@ -761,8 +839,8 @@ body,
  	       
      	 .product-category-product-data {
      	     width: 93%;
-     	     border: 1px solid #000;
-     	     @include border-radius(5px);
+     	     border: 1px solid #BCBCBC;
+     	     @include border-radius(4px);
      	     z-index: 1;
      	     margin-left: 10px;
      	     overflow: auto;
@@ -848,8 +926,8 @@ body,
      	 * 3.5.1 Template Name: Tilbud content
      	 ************************************************/
      	 #tilbud-embedded {
-     	     @include column(22);
-     	     height: 500px;
+     	     @include column(22, true);
+     	     height: 750px;
      	     padding-top: 5px;
  	         padding-bottom: 30px;
  	         
@@ -865,34 +943,28 @@ body,
  	 * 3.6 Tools front page
  	 ************************************************/
  	 .tools-front-content {
- 	     @include column(22);
+ 	     @include column(22, true);
+ 	         margin: 20px 0;
  	     
  	     .tools-front-left-column {
- 	         @include column(13);
- 	         float: left;
- 	         margin-top: 10px;
+ 	         @include column(14);
+ 	         @include append(1);
  	     }
  	     
  	     .tools-front-right-column {
- 	         @include column(8);
- 	         float: right;
- 	         padding-top: 10px;
- 	         padding-left: 30px;
+				  @include column(7, true);
  	         
  	         > a { text-decoration: none; }
  	         
- 	         #tools-front-manufacturers {
- 	             float: left;
- 	             border: 1px solid #DDD;
- 	             @include border-radius(5px);
- 	             @include column(7);
+ 	         #tools-front-manufacturers {            
+						@include box;
+						@include column(7, true);
+						
  	             height: 150px;
+
  	             
  	             #tools-front-manufacturers-title {
- 	                 @include border-top-left-radius(5px);
-        	         @include border-top-right-radius(5px);
- 	                 width: 100%;
- 	                 background: #DDD;
+								@include box-header;
  	                 
  	                 > span {
  	                     color: #000;
@@ -920,19 +992,17 @@ body,
  	         }
  	         
  	         #tools-front-tilbud {
- 	             float: left;
- 	             @include column(7);
+ 	             @include column(7, true);
+ 	             @include border-radius(4px);
+							@include dropshadow();
+							background: #fff;
  	             border: 1px solid #DDD;
- 	             @include border-radius(5px);
- 	             margin-top: 40px;
+ 	             margin-top: 20px;
  	             
  	             > a { text-decoration: none; }
  	             
  	             #tools-front-tilbud-title {
- 	                 @include border-top-left-radius(5px);
-        	         @include border-top-right-radius(5px);
- 	                 width: 100%;
- 	                 background: #DDD;
+								@include box-header;
  	                 
  	                 > span {
  	                     color: #000;
@@ -980,19 +1050,71 @@ body,
   	 ************************************************/
   	 .materials-front-content {
   	     @include column(22);
-  	     margin-top: 10px;
+  	     margin: 20px 0;
   	 }
-  	 
-  	 #materials-front-left-column {
-  	     @include column(13);
-  	     float: left;
-  	 }
-  	 
-  	 #materials-front-right-column {
-  	     @include column(8);
-  	     float: right;
-  	 }
- 	 
+
+     #materials-front-left-column {
+         @include column(14);
+         @include append(1);
+     }
+     
+     #materials-front-right-column {
+			  @include column(7, true);
+
+ 	         > a { text-decoration: none; }
+
+ 	         #materials-front-manufacturers {
+            @include border-radius(4px);
+            @include column(7, true);
+						@include dropshadow();
+ 	          border: 1px solid #DDD;
+						background: #fff;
+
+ 	             #materials-front-manufacturers-title {
+					 padding: 5px 0;
+ 	                 width: 100%;
+ 	                 border-bottom: 1px solid #DDD;
+
+ 	                 > span {
+ 	                     color: #000;
+ 	                     padding-left: 10px;
+ 	                     font-size: 1.3em;
+ 	                 } 
+ 	             }
+
+ 	             #materials-front-manufacturers-content {
+								padding: 10px;
+								}
+
+						}
+					}
+
+
+	/**
+	 * 3. Homepage content/widgets
+	 ************************************************/
+
+	.box-call-to-action {
+		@include box;
+		@include dropshadow;
+		//@include column(7, true);
+		float: left;
+		width: 100%;
+		height: 82px;
+	  position: relative;
+		background-color: #cdf8cd;
+		font-size: 1.2em;
+		text-align: center;
+		
+	  //background: #ddd;
+	  color: rgba(0,0,0, 1);
+	  text-shadow: 0 1px 0 rgba(255,255,255, 0.5);		
+		
+		> div { display: block; padding: 20px; }
+    > a { text-decoration: none; }
+
+		
+	}
 
 /**
  * 4. Footer
@@ -1004,7 +1126,7 @@ body,
 	background-color: #dddddd;
 	background-position: center top; 
 	margin-top: -80px;
-	height: 93px; }
+	height: 80px; }
 	
 	body.dmt-area-tools #footer-container {
 		background-image: url('../../graphics/tools_footer-texture.png');
@@ -1058,6 +1180,64 @@ body,
 		        }
 		    }
 		}
+	}
+	
+	#footer-products {
+		@include column(10);	
+
+		.footer-products-text {
+			@include column(10, true);
+			margin: 7px 0;
+			font-style: italic;
+			font-weight: bold;
+		}
+		
+		.footer-button {
+			@include opacity(0.5);
+			@include border-radius(4px);				
+			@include transition-property(all);
+			@include transition-duration(0.4s);
+			float: left;
+			background-color: #fff;
+			background: -moz-linear-gradient(
+				top,
+				#ffffff 0%,
+				#ebebeb 50%,
+				#dbdbdb 50%,
+				#b5b5b5);
+			background: -webkit-gradient(
+				linear, left top, left bottom, 
+				from(#ffffff),
+				color-stop(0.50, #ebebeb),
+				color-stop(0.50, #dbdbdb),
+				to(#b5b5b5));
+			color: #050505;
+			border: 1px solid #949494;
+			padding: 5px 10px;
+			margin-right: 10px;
+
+			font-size: 1em; 
+			text-decoration: none;
+			color: #000; }
+			
+			.footer-button:hover {
+				@include opacity(1);
+				@include transition-property(all);
+				@include transition-duration(0.4s);
+				color: red; }
+
+		.first {
+			clear: left;
+		}
+
+	}
+
+	#footer-info {
+		@include column(14,true);
+		margin: 10px 0 0 0;
+		text-align: right;
+		div { float: right; width: auto; margin-top: 7px; }
+		img { float: right; width: 85px; margin-left: 20px; }
 	}
 		
 /**

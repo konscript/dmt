@@ -10,10 +10,7 @@ get_header(); // Loads the header.php template. ?>
 
 			<div id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
 
-				<div id="banner-container">
-					<div id="banner">
-					</div>
-				</div>
+				<?php do_atomic( 'entry_header' ); ?>
 				
 				<?php if (get_area() == "tools"): ?>
 				    

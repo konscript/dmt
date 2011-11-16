@@ -18,9 +18,7 @@ get_header(); // Loads the header.php template. ?>
 		<!-- /Title banner -->
 		
 		<div class="product-category-content">
-		    <div class="product-category-call-to-action">
-		        Kontakt os på 70201601 eller <a href="mailto:dmt@dmtas.dk">dmt@dmtas.dk</a> for bestilling eller konsultation
-		    </div>
+
             <?php query_posts(array( 'post_type'=>'products', 'product-categories'=>$term->slug, 'orderby'=>'title', 'order'=>'ASC' ) ); ?>
             <?php $productsperrow = 3; $pc = 1; ?>
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
