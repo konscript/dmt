@@ -48,7 +48,7 @@ get_header(); ?>
     				</div>
     				<div id="product-right-column">
         				<div id="product-content">
-    				    <div id="product-content-header"><span>Specifikationer></span></div>
+    				    <div id="product-content-header"><span>Specifikationer</span></div>
         					<?php the_field('product_specifications'); ?>
         					<?php wp_link_pages( array( 'before' => '<p class="page-links pages">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
         				</div>

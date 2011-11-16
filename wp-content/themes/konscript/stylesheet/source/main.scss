@@ -395,13 +395,15 @@ body,
 			}
 			
 			.entry-overview-title {
-				padding: 15px 0 0 20px;
-				background-color: #CCC;
+			    @include box-header;
+				//padding: 15px 0 0 20px;
+				//background-color: #CCC;
 				//border: 1px solid #000;
-				@include border-top-left-radius(5px);
-				@include border-top-right-radius(5px);
+				//@include border-top-left-radius(5px);
+				//@include border-top-right-radius(5px);
 				
 				> a {
+				    padding: 15px 0 0 20px;
 				    @include single-text-shadow(white, 0, 1px, 2px);
     				font-family: $customfont;
     				text-transform: uppercase;
@@ -651,7 +653,7 @@ body,
 	 
 	// Left column
 	#product-left-column {
-		@include column(12);
+		@include column(11);
 		@include append(1);	
 	     
 		#product-image-container {
