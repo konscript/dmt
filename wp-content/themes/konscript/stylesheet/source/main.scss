@@ -267,6 +267,7 @@ body,
 			border: 1px solid #949494;
 			padding: 10px 20px;
 			font-size: 2.5em; 
+			font-family: $customfont;
 			text-decoration: none;
 			color: #000; }
 			
@@ -967,10 +968,8 @@ body,
 						background: #fff;
 
  	             #materials-front-manufacturers-title {
-									 padding: 5px 0;
- 	                 width: 100%;
- 	                 border-bottom: 1px solid #DDD;
-
+								@include box-header;
+								
  	                 > span {
  	                     color: #000;
  	                     padding-left: 10px;
