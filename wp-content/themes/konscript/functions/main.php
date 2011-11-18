@@ -61,6 +61,7 @@ function hybrid_theme_setup_theme() {
 	/* Add the title, byline, and entry meta before and after the entry. */
 	add_action( "{$prefix}_entry_header", 'hybrid_entry_title' );
 	add_action( "{$prefix}_entry_header", 'hybrid_entry_byline' );
+	add_action( "{$prefix}_entry_byline", 'hybrid_entry_byline' );
 	add_action( "{$prefix}_entry_footer", 'hybrid_entry_meta' );
 
 	/* Add the after content sidebar and navigation links after the content. */
@@ -171,7 +172,7 @@ function hybrid_theme_body_class( $classes ) {
  */
 function hybrid_breadcrumb() {
 	if ( current_theme_supports( 'breadcrumb-trail' ) )
-		breadcrumb_trail( array( 'front_page' => false, 'show_home' => false ) );
+		breadcrumb_trail( array( 'separator' => '>', 'front_page' => false, 'show_home' => false ) );
 }
 
 /**
@@ -191,7 +192,7 @@ function hybrid_entry_byline() {
 	$byline = '';
 
 	if ( 'post' == get_post_type() && 'link_category' !== get_query_var( 'taxonomy' ) )
-		$byline = '<p class="byline">' . __( 'By [entry-author] on [entry-published] [entry-edit-link before=" | "]', hybrid_get_textdomain() ) . '</p>';
+		$byline = '<div class="byline">' . __( 'Af [entry-author] d. [entry-published] [entry-edit-link before=" | "]', hybrid_get_textdomain() ) . '</div>';
 
 	echo apply_atomic_shortcode( 'byline', $byline );
 }
@@ -204,10 +205,10 @@ function hybrid_entry_meta() {
 	$meta = '';
 
 	if ( 'post' == get_post_type() )
-		$meta = '<p class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms taxonomy="post_tag" before="| Tagged "] [entry-comments-link before="| "]', hybrid_get_textdomain() ) . '</p>';
+		$meta = '<div class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Under "] [entry-terms taxonomy="post_tag" before="| Tagged "] [entry-comments-link before="| "]', hybrid_get_textdomain() ) . '</div>';
 
 	elseif ( is_page() && current_user_can( 'edit_page', get_the_ID() ) )
-		$meta = '<p class="entry-meta">[entry-edit-link]</p>';
+		$meta = '<div class="entry-meta">[entry-edit-link]</div>';
 
 	echo apply_atomic_shortcode( 'entry_meta', $meta );
 }

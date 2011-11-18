@@ -10,7 +10,7 @@ get_header(); // Loads the header.php template. ?>
 	    <!-- Title banner -->
 		<div id="banner-container">
 		    <div id="banner">
-			    <h1 class="page-title entry-title">
+			    <h1 class="page-title">
                     <a href="<?php echo $_SERVER['REQUEST_URI']; ?>" title="<?php echo $term->name; ?>" rel="bookmark"><?php echo $term->name; ?></a>
                 </h1>
 		    </div>

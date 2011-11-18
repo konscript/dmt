@@ -394,8 +394,37 @@ body,
 			.entry-title {
 				padding: 45px 0 0 20px;
 			}
+			
+			.entry-overview-title {
+			    @include box-header;
+				//padding: 15px 0 0 20px;
+				//background-color: #CCC;
+				//border: 1px solid #000;
+				//@include border-top-left-radius(5px);
+				//@include border-top-right-radius(5px);
+				
+				> a {
+				    padding: 15px 0 0 20px;
+				    @include single-text-shadow(white, 0, 1px, 2px);
+    				font-family: $customfont;
+    				text-transform: uppercase;
+    				color: #000;
+    				text-decoration: none;
+    				font-size: 28px; }
+			}
+			
 			.post-title {}
-			.page-title {}
+			.page-title {
+			    //padding: 45px 0 0 20px;
+			    
+			    > a {
+    				@include single-text-shadow(white, 0, 1px, 1px);
+    				font-family: $customfont;
+    				text-transform: uppercase;
+    				color: #000;
+    				text-decoration: none;
+    				font-size: 34px; }
+			}
 			.attachment-title {}
 			.error-404-title {}
 
@@ -408,12 +437,25 @@ body,
 				font-size: 34px; }
 
 			// Author and date byline
-			.byline {}
+			.byline {
+			    padding-left: 3px;
+			    background-color: #F5F5F5;
+			}
+			
+			.entry-container {
+			    border-left: 1px solid #CCC;
+			    border-right: 1px solid #CCC;
+			    border-bottom: 1px solid #CCC;
+			    @include border-radius(5px);
+			    margin-bottom: 10px;
+			    @include box-shadow(gray 2px 2px 5px);
+			}
 
 			// Full entries
 			.entry-content {
-				@include column(22, true);
-				padding: 20px 0 20px 0; }
+				@include column(21, true);
+				padding: 20px 10px 15px 10px;
+			}
 				
 			body.home .entry-content {
 				@include column(11);
@@ -429,7 +471,13 @@ body,
 				a.more-link {}
 
 			// Entry metadata
-			.entry-meta {}
+			.entry-meta {
+			    padding-bottom: 5px;
+			    //background-color: #F5F5F5;
+			    .category {
+			        padding-left: 3px;
+			    }
+			}
 
 		// Post series
 		.series {} 
@@ -489,34 +537,80 @@ body,
 
 		// Comments closed paragraph
 		p.comments-closed {}
+		
+		li.comment {
+		    margin-bottom: 10px;
+	        border: 1px solid #AAA;
+	    }
+	    
+	    .comment-body > p {
+	        padding-top: 5px;
+	        padding-left: 10px;
+	        padding-right: 10px;
+	    }
+	    
+	    .reply {
+	        padding-left: 5px;
+	        margin-bottom: 5px;
+	        
+	        .comment-reply-link {
+			    padding: 2px;
+			    border: 1px solid;
+			    margin-bottom: 2px;
+			    text-decoration: none;
+			    color: #000;
+			    background-color: #EEE;
+			    &:hover {
+			        text-decoration: underline;
+			    }
+			}
+	    }
 
 			// Main comments section
 			#comments {
-				ol {}
-
-					// Individual comments (note that WordPress has even/odd backwards)
-					li {}
-						li li {}
-							li li li {}
-								li li li li {}
-					li.even {}
-					li.odd {}
-					li.thread-even {}
-					li.thread-odd {}
-					li.author {}
-					li.trackback {}
-					li.pingback {}
-
-						// Comment avatars
-						.avatar {}
-
-						// Comment metadata
-						.comment-meta {}
-							.comment-meta cite {}
-
-						// Comment text
-						.comment-text {}
+			    margin-top: 20px;
+			}  
+			  
+			ol {
+			    .children {
+			        list-style-type: none;
+			        padding-right: 5px;
+			    }
 			}
+
+				// Individual comments (note that WordPress has even/odd backwards)
+				li {}
+					li li {}
+						li li li {}
+							li li li li {}
+				li.even {}
+				li.odd {}
+				li.thread-even {}
+				li.thread-odd {}
+				li.author {}
+				li.trackback {}
+				li.pingback {}
+
+					// Comment avatars
+					.avatar {}
+
+					// Comment metadata
+					.comment-author {
+					    padding-top: 5px;
+					    padding-bottom: 5px;
+					    padding-left: 10px;
+					    background-color: #EEE;
+					    font-size: 1.2em;					    
+					}
+					.comment-meta {
+					    padding-left: 10px;
+					    padding-bottom: 0px;
+					    background-color: #F5F5F5;
+					}
+						.comment-meta cite {}
+
+					// Comment text
+					.comment-text {}
 
 				// Paged comments navigation
 				#comments-template .paged-navigation {}
@@ -525,7 +619,19 @@ body,
 					#comments-template .paged-navigation .prev {}
 
 			// Main comment form div
-			#respond {}
+		    #respond {
+			    //border: 1px solid #AAA;
+			    background-color: #F7F7F7;
+			    padding-top: 10px;
+			    padding-left: 10px;
+			    padding-bottom: 5px;
+			    margin-top: 5px;
+			    margin-right: 10px;
+			    margin-left: 10px;
+			    margin-bottom: 10px;
+			    border: 1px solid #AAA;
+			    @include box-shadow(gray 2px 2px 5px);
+			}
 
 				// Comment form title
 				#reply {}
@@ -548,7 +654,7 @@ body,
 	 
 	// Left column
 	#product-left-column {
-		@include column(12);
+		@include column(11);
 		@include append(1);	
 	     
 		#product-image-container {
