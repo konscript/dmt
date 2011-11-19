@@ -9,10 +9,11 @@
 !wp-config-sample.php
 !wp-content/
 
-# Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
+# Ignore everything in the "wp-content" directory, except the "plugins", "themes", and "languages" directories.
 wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
+!wp-content/languages/
 
 # Ignore everything in the "plugins" directory, except the plugins you specify (see the commented-out examples for hints on how to do this.)
 wp-content/plugins/*
