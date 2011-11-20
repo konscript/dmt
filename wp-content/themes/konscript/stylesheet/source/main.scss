@@ -772,6 +772,7 @@ body,
  	 ************************************************/
 	.product-category-content {
 		@include column(22, true);
+		padding-left: 8px;
 		width: 100%; }
  	 
  	 .product-category-call-to-action {
@@ -800,7 +801,8 @@ body,
              @include border-radius(4px);
              
              .product-category-product-image {
-                 width: 70px;
+                 //min-width: 70px;
+                 max-width: 150px;
                  height: 100px;
                  display: block;
                  margin-left: auto;
