@@ -392,7 +392,7 @@ body,
 
 			// Post, page, and 404 page titles
 			.entry-title {
-				padding: 45px 0 0 20px;
+				padding: 45px 0px 0px 20px;
 			}
 			
 			.entry-overview-title {
@@ -510,12 +510,12 @@ body,
 				.widget-title {}
 
 		// Homepage widget section
-		#home-widgetzone {
+		#home-widgetzone { 
 			@include column(10, true);
 			margin-top: 20px;
 			
 			.widget {
-				@include column(5); 
+				@include column(5);
 				padding-bottom: 20px; }
 				
 				.widget-inside {}
