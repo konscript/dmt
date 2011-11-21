@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
         speed: 1000
     });
 
-		$(".primary-menu li:last-child .separator").addClass('last-child');
-		$(".general-menu li:last-child .separator").addClass('last-child');
+		$(".primary-menu li:last-child .separator").css('display', 'none');
+		$(".general-menu li:last-child .separator").css('display', 'none');
     
 });
