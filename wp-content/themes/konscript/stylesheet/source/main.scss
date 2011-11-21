@@ -673,7 +673,7 @@ body,
                      margin-left: auto;
                      margin-right: auto;
                      vertical-align: middle;
-                     display: table-cell;
+                     display: block;
                      min-height: 200px;
                      max-height: 300px;
                      //max-width: 350px;
@@ -689,7 +689,7 @@ body,
          	         list-style-type: none;
          	         float: left;
          	         position: relative;
-                     left: 45%;
+                     left: 48%;
                      
                      > li {
                          display: inline;
