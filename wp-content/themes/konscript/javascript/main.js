@@ -8,6 +8,9 @@ jQuery(document).ready(function($) {
         fx: 'fade',
         timeout: 1000,
         speed: 1000
-    })
+    });
+
+		$(".primary-menu li:last-child .separator").addClass('last-child');
+		$(".general-menu li:last-child .separator").addClass('last-child');
     
 });

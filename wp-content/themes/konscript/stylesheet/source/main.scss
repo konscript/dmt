@@ -157,7 +157,7 @@ body,
 						float: left;						
 						margin-left: 20px; }
 					
-					li:last-child .separator {
+					.last-child, li:last-child .separator {
 						display: none; }			
 				
 				ul ul {
