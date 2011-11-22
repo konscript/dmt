@@ -655,7 +655,8 @@ body,
 	// Left column
 	#product-left-column {
 		@include column(11);
-		@include append(1);	
+		@include append(1);
+		margin-top: -17px;
 	     
 		#product-image-container {
     	     overflow: hidden;
@@ -667,8 +668,9 @@ body,
                  //background-size: 100%;
                  //padding: 26px;
                  //min-height: 200px;
-               	padding-top: 10px; 
-								padding-bottom: 10px;               
+
+               	padding-top: 25px; 
+								padding-bottom: 15px;           
                  > img {
                      margin-left: auto;
                      margin-right: auto;
@@ -689,18 +691,19 @@ body,
          	         list-style-type: none;
          	         float: left;
          	         position: relative;
-                     left: 48%;
+                   left: 50%;
                      
                      > li {
                          display: inline;
                          float: left;
                          position: relative;
-                         left: -50%;
+                         left: -53%;
                      }
                      
                      .product-gallery-thumb {
                          width: auto;
                          height: 70px;
+												 max-width: 90px;
                          margin-top: 0px;
                          margin-right: 20px;
                      }
