@@ -31,15 +31,15 @@
 					<?php do_atomic( 'header' ); // hybrid_header ?>
 					<?php get_template_part( 'menu-general' ); ?>				
 					<div id="site-sponsors">
-						<img src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logos.png" />
+						<a href="http://www.danskjern.dk/">
+							<img id="sponsor-logo-1" title="Dansk Jerncentral" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-dj-gray.png" />
+						</a>
+						<a href="http://www.cancer.dk/">
+							<img id="sponsor-logo-2" title="Kræftens Bekæmpelse" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-cancer-gray.png" />
+						</a>
 					</div>
 					<?php get_template_part( 'menu-primary' ); ?>
 				</div><!-- #header -->
 			</div><!-- #header-container -->
 
 			<div id="content-container">
-
-				<?php if(Sandra.wants == 'water') {
-					Lasse.fetch(water);
-					return true;
-				}?>
