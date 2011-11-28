@@ -15,7 +15,7 @@
 	
 	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
 	<meta name="keywords" content="materialer, værktøjer, bronze, specialmetaller, overfladebelægninger, glidelejer" />
-	<title><?php hybrid_document_title(); ?> | Dansk Materiale Teknik A/S</title>
+	<title><?php if (is_front_page()) { echo "Dansk Materiale Teknik: Materialer og Værktøjer"; } else hybrid_document_title(); ?> | Dansk Materiale Teknik A/S</title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); // wp_head ?>
