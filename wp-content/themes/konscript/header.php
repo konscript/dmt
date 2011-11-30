@@ -38,8 +38,3 @@
 			</div><!-- #header-container -->
 
 			<div id="content-container">
-
-				<?php if(Sandra.wants == 'water') {
-					Lasse.fetch(water);
-					return true;
-				}?>

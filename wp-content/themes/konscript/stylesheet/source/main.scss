@@ -243,12 +243,11 @@ body,
 			width: 100%;
 			height: 100%; }
 		
-		.banner-button {
+		a .banner-button {
 			@include box-shadow(0px 1px 4px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,1));
-			@include text-shadow(0px -1px 0px rgba(000,000,000,0.1), 0px 1px 0px rgba(255,255,255,0.5));
+			@include text-shadow(0 -1px 1px rgba(000,000,000,0.3), 0 1px 0 rgba(255,255,255,0.3));
+			//@include single-text-shadow(rgba(255,255,255,0.75), 2px, 0px, 2px);
 			@include border-radius(4px);				
-			@include transition-property(all);
-			@include transition-duration(0.4s);
 			background-color: #fff;
 			background: -moz-linear-gradient(
 				top,
@@ -263,26 +262,23 @@ body,
 				color-stop(0.50, #dbdbdb),
 				to(#b5b5b5));
 			position: absolute;
-			color: #050505;
 			border: 1px solid #949494;
 			padding: 10px 20px;
 			font-size: 2.5em; 
 			font-family: $customfont;
 			text-decoration: none;
-			color: #000; }
+			color: #000;
+			@include transition-property(all);
+			@include transition-duration(0.3s); }
 			
-			.banner-button:hover {
-				@include box-shadow(0px 1px 6px rgba(000,000,000,0.4), inset 0px 0px 1px rgba(255,255,255,1));
-				@include text-shadow(0px -1px 0px rgba(000,000,000,0.2), 0px 1px 0px rgba(255,255,255,1));				
-				@include transition-property(all);
-				@include transition-duration(0.4s);
+			a .banner-button:hover {
+				@include box-shadow(0 1px 6px rgba(000,000,000,0.4), inset 0 0 1px rgba(255,255,255,1));
+				@include text-shadow(0 0 0 rgba(000,000,000,0), 0 1px 0 rgba(255,255,255,1));				
 				color: red; }
 
-			.banner-button:active {
-				@include box-shadow(0px 1px 2px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,1));
-				@include text-shadow(0px 0px 0px rgba(000,000,000,0), 0px 0px 0px rgba(255,255,255,0));				
-				@include transition-property(all);
-				@include transition-duration(0.2s); }
+			a .banner-button:active {
+				@include box-shadow(0 1px 2px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,1));
+				@include text-shadow(0 0 0 rgba(000,000,000,0), 0 0 0 rgba(255,255,255,0)); }
 
 		}
 		
@@ -405,7 +401,7 @@ body,
 				
 				> a {
 				    padding: 15px 0 0 20px;
-				    @include single-text-shadow(white, 0, 1px, 2px);
+						@include text-shadow(0 -1px 1px rgba(000,000,000,0.5), 0 1px 0 rgba(255,255,255,1));
     				font-family: $customfont;
     				text-transform: uppercase;
     				color: #000;
@@ -414,22 +410,12 @@ body,
 			}
 			
 			.post-title {}
-			.page-title {
-			    //padding: 45px 0 0 20px;
-			    
-			    > a {
-    				@include single-text-shadow(white, 0, 1px, 1px);
-    				font-family: $customfont;
-    				text-transform: uppercase;
-    				color: #000;
-    				text-decoration: none;
-    				font-size: 34px; }
-			}
+			.page-title {}
 			.attachment-title {}
 			.error-404-title {}
 
 			.entry-title a, h1.entry-title {
-				@include single-text-shadow(white, 0, 1px, 1px);
+				@include single-text-shadow(rgba(255,255,255,0.75), 2px, 0px, 2px);
 				font-family: $customfont;
 				//text-transform: uppercase;
 				color: #000;
@@ -1166,20 +1152,20 @@ body,
 		    
 		    #materials-footer-menu,
 		    #tools-footer-menu {
-		        @include column(5);
-		        > ul { 
-		            list-style-type: square;
-		            > li a {
-		                @include transition-property(color);
-						@include transition-duration(0.5s);
-						text-decoration: none;
-						font-size: 1.0em;
-						color: #000;
-						&:hover {
+	        @include column(5);
+	        > ul { 
+	           list-style-type: square;
+	           > li a {
+							@include transition-property(color);
+							@include transition-duration(0.5s);
+							text-decoration: none;
+							font-size: 1.0em;
+							color: #000;
+							&:hover {
 							color: #0079c2; }
-		            }
-		        }
-		    }
+           }
+        }
+	    }
 		}
 	}
 	
@@ -1223,8 +1209,6 @@ body,
 			
 			.footer-button:hover {
 				@include opacity(1);
-				@include transition-property(all);
-				@include transition-duration(0.4s);
 				color: red; }
 
 		.first {
