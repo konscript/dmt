@@ -1308,11 +1308,37 @@ table {}
 	td {}
 
 // Forms 
-form {}
-	textarea {}
-	input {}
-	label {}
-	option {}
+form {
+	
+	p {
+		margin: 0 0 1.2em 0;
+
+		span {
+			
+			* {
+				@include border-radius(3px);
+				@include box-shadow(#DADADA 0px 2px 3px);
+				padding: 7px;
+				background-color: #fff;
+				border: 1px solid #BCBCBC;
+			}
+			span.wpcf7-not-valid-tip {
+				@include opacity(1);
+				top: -7px;
+				left: 110%;
+				border: 0px;
+				background-color: #D97777;
+				color: white;
+				padding: 5px;
+			}
+			textarea {}
+			input {}
+			label {}
+			option {}			
+		}
+	}
+}
+
 
 // Notes 
 .note {}
