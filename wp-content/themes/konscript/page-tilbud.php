@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Tilbud
  * Page template for the page "Tilbud lige nu"
  */
 

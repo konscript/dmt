@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Products
  * Page template for the overall product page ("Produkter")
  */
 

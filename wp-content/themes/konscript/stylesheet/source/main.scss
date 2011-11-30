@@ -392,31 +392,18 @@ body,
 			.search-title {}
 
 		// Entry wrapper <div>
-		.hentry {}
+		.blog .hentry {
+			@include prepend(1);
+			@include column(20);
+			margin-top: 20px;
+		}
 		.post {}
 		.page {}
+//		.even { margin-right: 0; }
 
 			// Post, page, and 404 page titles
 			.entry-title {
 				padding: 45px 0px 0px 20px;
-			}
-			
-			.entry-overview-title {
-			    @include box-header;
-				//padding: 15px 0 0 20px;
-				//background-color: #CCC;
-				//border: 1px solid #000;
-				//@include border-top-left-radius(5px);
-				//@include border-top-right-radius(5px);
-				
-				> a {
-				    padding: 15px 0 0 20px;
-						@include text-shadow(0 -1px 1px rgba(000,000,000,0.5), 0 1px 0 rgba(255,255,255,1));
-    				font-family: $customfont;
-    				text-transform: uppercase;
-    				color: #000;
-    				text-decoration: none;
-    				font-size: 28px; }
 			}
 			
 			.post-title {}
@@ -434,23 +421,35 @@ body,
 
 			// Author and date byline
 			.byline {
-			    padding-left: 3px;
-			    background-color: #F5F5F5;
+				clear:both;
+				padding: 10px;
+				background-color:#F5F5F5;
 			}
 			
 			.entry-container {
-			    border-left: 1px solid #CCC;
-			    border-right: 1px solid #CCC;
-			    border-bottom: 1px solid #CCC;
-			    @include border-radius(5px);
-			    margin-bottom: 10px;
-			    @include box-shadow(gray 2px 2px 5px);
+				@include box();
+				@include dropshadow();
 			}
+						
+			.entry-overview-title {
+			    //@include box-header;
+					padding: 30px 50px;			
+				
+				> a {
+   				font-family: $customfont;
+   				color: #000;
+   				text-decoration: none;
+   				font-size: 2em; }
+			}			
 
 			// Full entries
 			.entry-content {
-				@include column(21, true);
-				padding: 20px 10px 15px 10px;
+				clear: both;
+				padding: 20px 0;
+			}
+			
+			.blog .hentry .entry-content {
+				padding: 50px;
 			}
 				
 			body.home .entry-content {
@@ -468,7 +467,9 @@ body,
 
 			// Entry metadata
 			.entry-meta {
-			    padding-bottom: 5px;
+		    padding: 10px;
+		    border-top: 1px solid #F5F5F5;
+
 			    //background-color: #F5F5F5;
 			    .category {
 			        padding-left: 3px;
@@ -616,18 +617,9 @@ body,
 
 			// Main comment form div
 		    #respond {
-			    //border: 1px solid #AAA;
-			    background-color: #F7F7F7;
-			    padding-top: 10px;
-			    padding-left: 10px;
-			    padding-bottom: 5px;
-			    margin-top: 5px;
-			    margin-right: 10px;
-			    margin-left: 10px;
-			    margin-bottom: 10px;
-			    border: 1px solid #AAA;
-			    @include box-shadow(gray 2px 2px 5px);
-			}
+			    @include box();
+					padding: 20px;
+				}
 
 				// Comment form title
 				#reply {}
