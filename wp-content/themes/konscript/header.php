@@ -14,7 +14,8 @@
 <head>
 	
 	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
-	<title><?php hybrid_document_title(); ?> | Dansk Materiale Teknik A/S</title>
+	<meta name="keywords" content="materialer, værktøjer, bronze, specialmetaller, overfladebelægninger, glidelejer" />
+	<title><?php if (is_front_page()) { echo "Dansk Materiale Teknik: Materialer og Værktøjer"; } else hybrid_document_title(); ?> | Dansk Materiale Teknik A/S</title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); // wp_head ?>
@@ -31,7 +32,14 @@
 					<?php do_atomic( 'header' ); // hybrid_header ?>
 					<?php get_template_part( 'menu-general' ); ?>				
 					<div id="site-sponsors">
-						<img src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logos.png" />
+						<a href="http://www.danskjern.dk/" target="_blank" style="width: 70px">
+							<img id="sponsor-logo-1-hover" class="sponsor-hover" title="Dansk Jerncentral" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-dj-color.png" />
+							<img id="sponsor-logo-1" class="sponsor-idle" title="Dansk Jerncentral" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-dj-gray.png" />
+						</a>
+						<a href="http://www.cancer.dk/" target="_blank" style="width: 90px">
+							<img id="sponsor-logo-2-hover" class="sponsor-hover" title="Kræftens Bekæmpelse" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-cancer-color.png" />
+							<img id="sponsor-logo-2" class="sponsor-idle" title="Kræftens Bekæmpelse" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-cancer-gray.png" />
+						</a>
 					</div>
 					<?php get_template_part( 'menu-primary' ); ?>
 				</div><!-- #header -->

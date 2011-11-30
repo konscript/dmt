@@ -15,7 +15,11 @@ get_header(); // Loads the header.php template. ?>
                 <div class="product-category-product">
                     <a href="<?php the_permalink(); ?>">
                         <div class="product-category-product-image-container">
+                            <?php if (get_field('image_1')): ?>
                             <img class="product-category-product-image" src="<?php the_field('image_1'); ?>" />
+                            <?php else: ?>
+                            <img class="product-category-product-image" src="<?php bloginfo('template_url'); ?>/graphics/logo_footer.png" />
+                            <?php endif; ?>
                         </div>
                         <div class="product-category-product-title">
                             <?php the_title(); ?>

@@ -176,7 +176,7 @@ function hybrid_entry_edit_link_shortcode( $attr ) {
 
 	$attr = shortcode_atts( array( 'before' => '', 'after' => '' ), $attr );
 
-	return $attr['before'] . '<span class="edit"><a class="post-edit-link" href="' . get_edit_post_link( $post->ID ) . '" title="' . sprintf( esc_attr__( 'Edit %1$s', $domain ), $post_type->labels->singular_name ) . '">' . __( 'Edit', $domain ) . '</a></span>' . $attr['after'];
+	return $attr['before'] . '<span class="edit"><a class="post-edit-link" href="' . get_edit_post_link( $post->ID ) . '" title="' . sprintf( esc_attr__( 'Rediger %1$s', $domain ), $post_type->labels->singular_name ) . '">' . __( 'Rediger', $domain ) . '</a></span>' . $attr['after'];
 }
 
 /**
@@ -189,7 +189,7 @@ function hybrid_entry_published_shortcode( $attr ) {
 	$domain = hybrid_get_textdomain();
 	$attr = shortcode_atts( array( 'before' => '', 'after' => '', 'format' => get_option( 'date_format' ) ), $attr );
 
-	$published = '<abbr class="published" title="' . sprintf( get_the_time( esc_attr__( 'l, F jS, Y, g:i a', $domain ) ) ) . '">' . sprintf( get_the_time( $attr['format'] ) ) . '</abbr>';
+	$published = '<abbr class="published" title="' . sprintf( get_the_time( esc_attr__( 'l \d. j. F Y, \k\l. H:i', $domain ) ) ) . '">' . sprintf( get_the_time( $attr['format'] ) ) . '</abbr>';
 	return $attr['before'] . $published . $attr['after'];
 }
 
@@ -211,11 +211,11 @@ function hybrid_entry_comments_link_shortcode( $attr ) {
 			$comments_link = '<span class="' . esc_attr( $attr['css_class'] ) . '">' . sprintf( $attr['none'], number_format_i18n( $number ) ) . '</span>';
 	}
 	elseif ( 0 == $number )
-		$comments_link = '<a class="' . esc_attr( $attr['css_class'] ) . '" href="' . get_permalink() . '#respond" title="' . sprintf( esc_attr__( 'Comment on %1$s', $domain ), the_title_attribute( 'echo=0' ) ) . '">' . sprintf( $attr['zero'], number_format_i18n( $number ) ) . '</a>';
+		$comments_link = '<a class="' . esc_attr( $attr['css_class'] ) . '" href="' . get_permalink() . '#respond" title="' . sprintf( esc_attr__( 'Kommenter på %1$s', $domain ), the_title_attribute( 'echo=0' ) ) . '">' . sprintf( $attr['zero'], number_format_i18n( $number ) ) . '</a>';
 	elseif ( 1 == $number )
-		$comments_link = '<a class="' . esc_attr( $attr['css_class'] ) . '" href="' . get_comments_link() . '" title="' . sprintf( esc_attr__( 'Comment on %1$s', $domain ), the_title_attribute( 'echo=0' ) ) . '">' . sprintf( $attr['one'], number_format_i18n( $number ) ) . '</a>';
+		$comments_link = '<a class="' . esc_attr( $attr['css_class'] ) . '" href="' . get_comments_link() . '" title="' . sprintf( esc_attr__( 'Kommenter på %1$s', $domain ), the_title_attribute( 'echo=0' ) ) . '">' . sprintf( $attr['one'], number_format_i18n( $number ) ) . '</a>';
 	elseif ( 1 < $number )
-		$comments_link = '<a class="' . esc_attr( $attr['css_class'] ) . '" href="' . get_comments_link() . '" title="' . sprintf( esc_attr__( 'Comment on %1$s', $domain ), the_title_attribute( 'echo=0' ) ) . '">' . sprintf( $attr['more'], number_format_i18n( $number ) ) . '</a>';
+		$comments_link = '<a class="' . esc_attr( $attr['css_class'] ) . '" href="' . get_comments_link() . '" title="' . sprintf( esc_attr__( 'Kommenter på %1$s', $domain ), the_title_attribute( 'echo=0' ) ) . '">' . sprintf( $attr['more'], number_format_i18n( $number ) ) . '</a>';
 
 	if ( $comments_link )
 		$comments_link = $attr['before'] . $comments_link . $attr['after'];
@@ -379,7 +379,7 @@ function hybrid_comment_edit_link_shortcode( $attr ) {
 	$attr = shortcode_atts( array( 'before' => '', 'after' => '' ), $attr );
 	$domain = hybrid_get_textdomain();
 
-	$link = '<a class="comment-edit-link" href="' . $edit_link . '" title="' . sprintf( esc_attr__( 'Edit %1$s', $domain ), $comment->comment_type ) . '"><span class="edit">' . __( 'Edit', $domain ) . '</span></a>';
+	$link = '<a class="comment-edit-link" href="' . $edit_link . '" title="' . sprintf( esc_attr__( 'Rediger %1$s', $domain ), $comment->comment_type ) . '"><span class="edit">' . __( 'Rediger', $domain ) . '</span></a>';
 	$link = apply_filters( 'edit_comment_link', $link, $comment->comment_ID );
 
 	return $attr['before'] . $link . $attr['after'];

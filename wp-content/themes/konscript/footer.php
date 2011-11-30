@@ -21,7 +21,7 @@
 			<div id="footer-info">
 				<img src="<?php echo get_bloginfo ('template_url'); ?>/graphics/logo_footer.png" />				
 				<div>Dansk Materiale Teknik A/S  |  Smedeholm 8, DK-2730 Herlev, Danmark<br />
-				CVR: 25063481  |  dmt@dmtas.dk  |  +45 70201601</div>
+				CVR: 25063481  |  <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a>  |  +45 <?php dmt_company_info('phone'); ?></div>
 			</div>
 		    <?php //get_template_part( 'menu-footer' ) ?>
 		    <?php //dynamic_sidebar( 'footer' ); ?>

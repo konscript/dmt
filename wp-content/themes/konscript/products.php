@@ -18,7 +18,8 @@ get_header(); ?>
 				<?php do_atomic( 'entry_header' ); ?>
     			<div class="entry-content">
     			    <div id="product-left-column">
-    			        <?php if (get_field('image_1')): ?>
+								<?php echo get_the_term_list($post->ID, 'product-categories', 'Produktkategori: ', ', ', ''); ?>
+    			      <?php if (get_field('image_1')): ?>
         				<div id="product-image-container">
         				    <div id="product-main-image-container">
         				        <img id="product-main-image" src="<?php the_field('image_1'); ?>" />
@@ -43,8 +44,6 @@ get_header(); ?>
         				    <div id="product-data-header"><span>Hent materialedata</span></div>
 			                <a href="<?php the_field('data_sheet'); ?>"><?php echo basename(get_field('data_sheet')); ?> <img id="product-data-icon" src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon.png" /></a>
         				</div>
-								<br /><br />
-  			        <?php echo get_the_term_list($post->ID, 'product-categories', 'Produktkategori: ', ', ', ''); ?>
     				</div>
     				<div id="product-right-column">
         				<div id="product-content">

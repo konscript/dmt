@@ -60,10 +60,20 @@ body,
 		#site-sponsors {
 			@include column(11, true);
 			@include append(1);
-			padding-top: 7px; }
+			padding-top: 20px; }
 			
-			#site-sponsors img {
+			#site-sponsors a {
+				position: relative;
 				float: right;
+				display: block;
+				height: 70px;
+				padding-left: 10px;
+				cursor: pointer;
+			}
+			
+			#site-sponsors a img {
+				position: absolute;
+				height: 70px;
 			}
 
 	/**
@@ -388,7 +398,7 @@ body,
 
 			// Post, page, and 404 page titles
 			.entry-title {
-				padding: 45px 0 0 20px;
+				padding: 45px 0px 0px 20px;
 			}
 			
 			.entry-overview-title {
@@ -496,12 +506,12 @@ body,
 				.widget-title {}
 
 		// Homepage widget section
-		#home-widgetzone {
-			@include column(11, true);
+		#home-widgetzone { 
+			@include column(10, true);
 			margin-top: 20px;
 			
 			.widget {
-				@include column(5); 
+				@include column(5);
 				padding-bottom: 20px; }
 				
 				.widget-inside {}
@@ -641,7 +651,8 @@ body,
 	// Left column
 	#product-left-column {
 		@include column(11);
-		@include append(1);	
+		@include append(1);
+		margin-top: -17px;
 	     
 		#product-image-container {
     	     overflow: hidden;
@@ -653,13 +664,14 @@ body,
                  //background-size: 100%;
                  //padding: 26px;
                  //min-height: 200px;
-                                  
+
+               	padding-top: 25px; 
+								padding-bottom: 15px;           
                  > img {
-                     padding-top: 10px;
                      margin-left: auto;
                      margin-right: auto;
                      vertical-align: middle;
-                     display: table-cell;
+                     display: block;
                      min-height: 200px;
                      max-height: 300px;
                      //max-width: 350px;
@@ -675,18 +687,19 @@ body,
          	         list-style-type: none;
          	         float: left;
          	         position: relative;
-                     left: 45%;
+                   left: 50%;
                      
                      > li {
                          display: inline;
                          float: left;
                          position: relative;
-                         left: -50%;
+                         left: -53%;
                      }
                      
                      .product-gallery-thumb {
                          width: auto;
                          height: 70px;
+												 max-width: 90px;
                          margin-top: 0px;
                          margin-right: 20px;
                      }
@@ -695,7 +708,7 @@ body,
     	 }
 	 
     	 #product-description {
-    	     margin-top: 0px;
+    	     margin-top: -10px;
     	     font-size: 1.1em;    
     	 }
 	 
@@ -758,6 +771,7 @@ body,
  	 ************************************************/
 	.product-category-content {
 		@include column(22, true);
+		padding-left: 8px;
 		width: 100%; }
  	 
  	 .product-category-call-to-action {
@@ -786,7 +800,8 @@ body,
              @include border-radius(4px);
              
              .product-category-product-image {
-                 width: 70px;
+                 //min-width: 70px;
+                 max-width: 150px;
                  height: 100px;
                  display: block;
                  margin-left: auto;
@@ -1110,7 +1125,7 @@ body,
 // Wrapper for the entire footer
 #footer-container {
 	width: 100%;
-	background-color: #dddddd;
+	background-color: #DDDDDD;
 	background-position: center top; 
 	margin-top: -80px;
 	height: 80px; }
