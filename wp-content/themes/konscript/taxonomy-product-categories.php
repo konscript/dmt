@@ -19,7 +19,7 @@ get_header(); // Loads the header.php template. ?>
 		
 		<div class="product-category-content">
 
-            <?php query_posts(array( 'post_type'=>'products', 'product-categories'=>$term->slug, 'orderby'=>'title', 'order'=>'ASC' ) ); ?>
+            <?php query_posts(array( 'post_type'=>'products', 'product-categories'=>$term->slug, 'orderby'=>'title', 'order'=>'ASC', 'nopaging'=>'true' ) ); ?>
             <?php $productsperrow = 3; $pc = 1; ?>
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <!-- Products go here! -->
