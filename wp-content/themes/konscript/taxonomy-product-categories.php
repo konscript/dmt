@@ -28,12 +28,13 @@ get_header(); // Loads the header.php template. ?>
                         <div class="product-category-product-image-container">
                             <?php if (get_field('image_1')): ?>
                             <img class="product-category-product-image" src="<?php the_field('image_1'); ?>" />
-                            <?php else: ?>
                             <?php endif; ?>
                         </div>
                         <div class="product-category-product-title">
                             <?php the_title(); ?>
+                            <?php if (get_field('data_sheet')): ?>
 				                    <a href="<?php the_field('data_sheet'); ?>"><div class="product-category-product-data"><img src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon_cropped.png" /></div></a>
+				                    <?php endif; ?>
                         </div>
                     </a>
                 </div>
@@ -45,6 +46,15 @@ get_header(); // Loads the header.php template. ?>
     			<?php get_template_part( 'loop-error' ); // Loads the loop-error.php template. ?>
     		<?php endif; ?>
     		<?php get_template_part( 'loop-nav' ); ?>
+
+		    <div class="box-call-to-action">
+		        <div class="box-call-to-action-inner">
+							Tlf. <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a><br />
+							for bestilling og konsultation
+						</div>
+		    </div>
+
+
 		</div>
 		<?php do_atomic( 'entry_footer' ); ?>
 		
