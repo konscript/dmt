@@ -28,6 +28,8 @@ get_header(); // Loads the header.php template. ?>
                         <div class="product-category-product-image-container">
                             <?php if (get_field('image_1')): ?>
                             <img class="product-category-product-image" src="<?php the_field('image_1'); ?>" />
+														<?php else: ?>
+														<img class="product-category-product-noimage" src="<?php bloginfo('template_url'); ?>/graphics/product_gallery-noimage.png" />
                             <?php endif; ?>
                         </div>
                         <div class="product-category-product-title">
@@ -53,7 +55,6 @@ get_header(); // Loads the header.php template. ?>
 							for bestilling og konsultation
 						</div>
 		    </div>
-
 
 		</div>
 		<?php do_atomic( 'entry_footer' ); ?>
