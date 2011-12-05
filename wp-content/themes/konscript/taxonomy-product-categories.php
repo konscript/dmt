@@ -29,17 +29,16 @@ get_header(); // Loads the header.php template. ?>
                             <?php if (get_field('image_1')): ?>
                             <img class="product-category-product-image" src="<?php the_field('image_1'); ?>" />
                             <?php else: ?>
-                            <img class="product-category-product-image" src="<?php bloginfo('template_url'); ?>/graphics/logo_footer.png" />
                             <?php endif; ?>
                         </div>
                         <div class="product-category-product-title">
                             <?php the_title(); ?>
+				                    <a href="<?php the_field('data_sheet'); ?>"><div class="product-category-product-data"><img src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon_cropped.png" /></div></a>
                         </div>
                     </a>
-                    <a href="<?php the_field('data_sheet'); ?>"><div class="product-category-product-data"><span>Materialedata <img src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon.png" /></span></div></a>
                 </div>
                 <?php if ($pc % $productsperrow != 0): ?>
-                <div class="product-category-product-spacer">&nbsp;</div>
+                <!--<div class="product-category-product-spacer">&nbsp;</div>-->
                 <?php endif; $pc++; ?>
             <?php endwhile; ?>
             <?php else : ?>

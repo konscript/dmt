@@ -18,39 +18,50 @@ get_header(); ?>
 				<?php do_atomic( 'entry_header' ); ?>
     			<div class="entry-content">
     			    <div id="product-left-column">
-								<?php echo get_the_term_list($post->ID, 'product-categories', 'Produktkategori: ', ', ', ''); ?>
     			      <?php if (get_field('image_1')): ?>
         				<div id="product-image-container">
-        				    <div id="product-main-image-container">
-        				        <img id="product-main-image" src="<?php the_field('image_1'); ?>" />
-        				    </div>
-        				    <?php if (get_field('image_2')): ?>
-        				    <div id="product-gallery-thumbs">
-                            <ul>
-                              <li><img class="product-gallery-thumb" src="<?php the_field('image_1'); ?>" /></li>
-                              <li><img class="product-gallery-thumb" src="<?php the_field('image_2'); ?>" /></li>
-                              <?php if (get_field('image_3')): ?>
-                              <li><img class="product-gallery-thumb" src="<?php the_field('image_3'); ?>" /></li>
-                              <?php endif; ?>
-                            </ul>
-                            </div>
-                            <?php endif; ?>
+									<div id="product-main-image-container">
+										<img id="product-main-image" src="<?php the_field('image_1'); ?>" />
+									</div>
+									<?php if (get_field('image_2')): ?>
+									<div id="product-gallery-thumbs">
+										<ul>
+											<li><img class="product-gallery-thumb" src="<?php the_field('image_1'); ?>" /></li>
+											<li><img class="product-gallery-thumb" src="<?php the_field('image_2'); ?>" /></li>
+											<?php if (get_field('image_3')): ?>
+											<li><img class="product-gallery-thumb" src="<?php the_field('image_3'); ?>" /></li>
+											<?php endif; ?>
+										</ul>
+									</div>
+									<?php endif; ?>
         				</div>
         				<?php endif; ?>
         				<div id="product-description">
         				    <?php the_content(); ?>
         				</div>
+								<?php if (get_field('data_sheet')): ?>
         				<div id="product-data">
-        				    <div id="product-data-header"><span>Hent materialedata</span></div>
-			                <a href="<?php the_field('data_sheet'); ?>"><?php echo basename(get_field('data_sheet')); ?> <img id="product-data-icon" src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon.png" /></a>
+        				    <div id="product-data-header"><span>Materialedata</span></div>
+			                <a href="<?php the_field('data_sheet'); ?>">
+												<img id="product-data-icon" src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon.png" />
+												<?php //echo basename(get_field('data_sheet')); ?>
+												Hent dokument!
+											</a>
         				</div>
+								<?php endif; ?>
     				</div>
     				<div id="product-right-column">
+							<div id="product-category">
+								<?php echo get_the_term_list($post->ID, 'product-categories', 'Produktkategori: ', ', ', ''); ?>
+							</div>	
+								<?php if (get_field('product_specifications')): ?>							
         				<div id="product-content">
-    				    <div id="product-content-header"><span>Specifikationer</span></div>
-        					<?php the_field('product_specifications'); ?>
-        					<?php wp_link_pages( array( 'before' => '<p class="page-links pages">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
+    				    	<div id="product-content-header"><span>Specifikationer</span></div>
+        					<div id="product-content-inner">
+										<?php the_field('product_specifications'); ?>
+									</div>
         				</div>
+								<?php endif; ?>
 						    <div class="box-call-to-action">
 						        <div class="box-call-to-action-inner">
 											Tlf. <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a><br />
