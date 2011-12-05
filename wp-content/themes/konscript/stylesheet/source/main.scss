@@ -298,7 +298,7 @@ body,
 			@include border-bottom-radius(4px);
 			background-position: center bottom;
 			background-color: #dddddd;			
-			height: 100px; }
+			height: 70px; }
 		
 		body.dmt-area-tools #banner {
 			background-image: url('../../graphics/tools_banner-texture.png'); }
@@ -404,7 +404,7 @@ body,
 
 			// Post, page, and 404 page titles
 			.entry-title {
-				padding: 45px 0px 0px 20px;
+				padding: 20px 0px 0px 20px;
 			}
 			
 			.post-title {}
@@ -413,7 +413,7 @@ body,
 			.error-404-title {}
 
 			.entry-title a, h1.entry-title {
-				@include single-text-shadow(rgba(255,255,255,0.75), 2px, 0px, 2px);
+				@include single-text-shadow(rgba(255,255,255,1), 0px, 1px, 1px);
 				font-family: $customfont;
 				//text-transform: uppercase;
 				color: #000;
@@ -827,9 +827,9 @@ body,
  	     
  	     .product-category-product-title {
  	         border-right: 1px solid #BCBCBC;
- 	         border-bottom: 1px solid #E1E1E1;
+ 	         border-bottom: 1px solid #d5d5d5;
  	         @include border-radius(4px);
- 	         background-color: #fff;
+ 	         background-color: #f0f0f0;
  	         
  	         width: 100%;
  	         padding: 5px 0;
