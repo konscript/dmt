@@ -639,7 +639,11 @@ body,
 	/**
 	 * 3.3 Product single page content
 	 ************************************************/
-	 
+	.products #banner {
+		height: auto;
+		padding-bottom: 1px;
+	} 
+	
 	// Left column
 	#product-left-column {
 		@include column(11);
@@ -842,6 +846,11 @@ body,
  	         font-weight: bold;
  	         overflow: auto;
  	         z-index: 2;
+					
+					 .product-category-product-title-text {
+						width: 90%;
+						margin: auto auto;
+					}
  	     }
  	       
 	     	 .product-category-product-data {

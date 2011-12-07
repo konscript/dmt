@@ -33,9 +33,9 @@ get_header(); // Loads the header.php template. ?>
                             <?php endif; ?>
                         </div>
                         <div class="product-category-product-title">
-                            <?php the_title(); ?>
+                            <div class="product-category-product-title-text"><?php the_title(); ?></div>
                             <?php if (get_field('data_sheet')): ?>
-				                    <a href="<?php the_field('data_sheet'); ?>"><div class="product-category-product-data"><img src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon_cropped.png" /></div></a>
+				                    <a href="<?php the_field('data_sheet'); ?>" title="Hent materialedata"><div class="product-category-product-data"><img src="<?php bloginfo('template_url'); ?>/graphics/product_data-sheet-pdf-icon_cropped.png" /></div></a>
 				                    <?php endif; ?>
                         </div>
                     </a>
