@@ -23,7 +23,7 @@ get_header(); // Loads the header.php template. ?>
 					</div>
 					<div id="banner-tools">
 						<a href="<?php echo get_bloginfo('siteurl'); ?>/vaerktoejer">
-						<div class="banner-button">Værktøjer</div>
+						<div class="banner-button">Værktøj</div>
 						<p>
 							<strong>Producenter:</strong><br />
 							FACOM, HITACHI,<br /> 
@@ -36,8 +36,8 @@ get_header(); // Loads the header.php template. ?>
 				<div class="entry-content">
 					<?php the_content(); ?>
 					<?php wp_link_pages( array( 'before' => '<p class="page-links pages">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
+					<?php do_atomic( 'entry_footer' ); ?>
 				</div><!-- .entry-content -->
-				<?php do_atomic( 'entry_footer' ); ?>
 			</div><!-- .hentry -->
 			
 			<div id="home-widgetzone" class="widgetzone">
