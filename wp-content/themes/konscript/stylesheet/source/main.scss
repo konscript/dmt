@@ -1305,6 +1305,9 @@ table {}
 	tr {}
 	th {}
 	td {}
+	tr, td {
+		border-bottom: 1px solid #EDEDED;
+	}
 
 // Forms 
 form {
