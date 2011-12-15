@@ -192,7 +192,7 @@ function hybrid_entry_byline() {
 	$byline = '';
 
 	if ( 'post' == get_post_type() && 'link_category' !== get_query_var( 'taxonomy' ) )
-		$byline = '<div class="byline">' . __( 'Af [entry-author] d. [entry-published] [entry-edit-link before=" | "]', hybrid_get_textdomain() ) . '</div>';
+		$byline = '<div class="byline"><div class="byline-inner"> ' . __( 'Af [entry-author] d. [entry-published] [entry-edit-link before=" | "]', hybrid_get_textdomain() ) . '</div></div>';
 
 	echo apply_atomic_shortcode( 'byline', $byline );
 }

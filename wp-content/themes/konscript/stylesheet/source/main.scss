@@ -423,9 +423,19 @@ body,
 
 			// Author and date byline
 			.byline {
+				@include column(22, true);
 				clear:both;
-				padding: 10px;
+				margin-top: -20px;
+				margin-bottom: 20px;
 				background-color:#F5F5F5;
+				
+				.byline-inner {
+					padding: 10px; }
+			}
+			
+			.blog .byline {
+				@include column(20, true);				
+				margin: 0;
 			}
 			
 			.entry-container {
@@ -450,6 +460,7 @@ body,
 			}
 			
 			.blog .hentry .entry-content, .archive .hentry .entry-content {
+				@include column(18, true);
 				padding: 50px;
 			}
 				
@@ -1297,14 +1308,22 @@ form {
 	p {
 		margin: 0 0 1.5em 0;
 
-		span {
+		span {}
 			
-			* {
+			input, textarea {
 				@include border-radius(3px);
 				@include box-shadow(#CACACA 0px -1px 0px);
 				padding: 7px;
 				background-color: #fff;
 				border: 1px solid #ACACAC;
+			}
+			input[type="submit"], button {
+				@include border-radius(3px);
+				padding: 7px;
+				background-color: #004C99;
+				color: #fff;
+				border: none;
+				cursor: pointer;
 			}
 			span.wpcf7-not-valid-tip {
 				@include opacity(1);
@@ -1319,7 +1338,6 @@ form {
 			input {}
 			label {}
 			option {}			
-		}
 	}
 }
 
