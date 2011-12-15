@@ -16,7 +16,7 @@ get_header(); ?>
 
 			<div id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
 				<?php do_atomic( 'entry_header' ); ?>
-    			<div class="entry-content">
+    			<div class="entry-content <?php if (get_field('single_column')) { echo 'single-column'; } ?>">
     			    <div id="product-left-column">
     			      <?php if (get_field('image_1')): ?>
         				<div id="product-image-container">

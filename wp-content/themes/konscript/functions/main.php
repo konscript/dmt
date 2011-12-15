@@ -253,7 +253,7 @@ function site_title() {
 }
 
 function dmt_company_info($type) {
-    $info = array( 'phone' => 70201601, 'email' => 'dmt@dmtas.dk');
+    $info = array( 'phone' => '7020 1601', 'email' => 'dmt@dmtas.dk');
     echo $info[$type];
 }
 ?>

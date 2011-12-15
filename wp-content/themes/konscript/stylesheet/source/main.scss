@@ -656,6 +656,10 @@ body,
 	} 
 	
 	// Left column
+	.single-column #product-left-column {
+		@include column(22, true);
+	}	
+	
 	#product-left-column {
 		@include column(11);
 	     

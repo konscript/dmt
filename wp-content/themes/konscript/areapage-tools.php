@@ -13,7 +13,7 @@
 		
     <div class="box-call-to-action">
         <div class="box-call-to-action-inner">
-					Tlf. <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a><br />
+					Tlf. 7020 1433 eller <a href="mailto:tools@dmtas.dk">tools@dmtas.dk</a><br />
 					for bestilling og konsultation
 				</div>
     </div>		
