@@ -16,7 +16,7 @@ get_header(); // Loads the header.php template. ?>
 
                 <div class="tilbud-thumbnail-container">
                     <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail( array(175, 200) /* size */ ); ?>
+                        <?php the_post_thumbnail( array(150, 200) /* size */ ); ?>
                         <span><?php the_title(); ?></span>
                     </a>
                 </div>
