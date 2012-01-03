@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Tilbud
+ * Template Name: Tilbud Overview
  * Page template for the page "Tilbud lige nu"
  */
 

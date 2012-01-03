@@ -1,6 +1,7 @@
 <?php
 /**
- * Template Name: Tilbud
+ * Template Name: Tilbud Viewer
+ * For singular tilbud pages
  */
 
 get_header(); // Loads the header.php template.  ?>
