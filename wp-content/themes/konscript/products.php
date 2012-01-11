@@ -53,6 +53,7 @@ get_header(); ?>
     				<div id="product-right-column">
 							<div id="product-category">
 								<?php echo get_the_term_list($post->ID, 'product-categories', 'Produktkategori: ', ', ', ''); ?>
+								<input type="button" value="Print" onclick="window.print()" />
 							</div>	
 								<?php if (get_field('product_specifications')): ?>							
         				<div id="product-content">

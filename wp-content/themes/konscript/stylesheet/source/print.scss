@@ -9,3 +9,62 @@
 //Recommended Blueprint configuration with scoping and semantic layout:
 body.bp {
   @include blueprint-print(true); }
+
+// The following strips down the product pages and re-aligns some elements
+#header-container,
+#footer-container,
+#product-left-column #product-image-container #product-main-image-container,
+#product-left-column #product-data,
+#product-right-column .box-call-to-action,
+#product-right-column #product-category input {
+	display: none;
+}
+
+#product-left-column,
+#product-right-column {
+	width: 100%;
+	float: left;
+}
+
+#product-category {
+	margin: 20px 0;
+}
+
+#product-left-column #product-image-container #product-gallery-thumbs > ul {
+	left: 0;
+}
+
+#product-left-column #product-image-container #product-gallery-thumbs > ul > li {
+	left: auto;
+}
+
+#product-left-column #product-image-container #product-gallery-thumbs > ul .product-gallery-thumb {
+	height: auto;
+	max-width: 430px;
+	float: left;
+	clear: both;
+}
+
+#product-right-column #product-content {
+	border: none;
+}
+
+#product-right-column #product-content-header span,
+#product-right-column #product-content-inner {
+	padding: 0;
+	margin: 20px 0;
+}
+
+#product-right-column #product-content::before, #product-right-column #product-content::after {
+	display: none;
+}
+
+#banner {
+	@include single-box-shadow(#000, 0, 0px, 0px, 0px, true);
+	background: transparent;
+	border: none;	
+}
+
+.entry-title {
+	padding: 0;
+}
