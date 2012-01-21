@@ -15,7 +15,9 @@ get_header(); // Loads the header.php template. ?>
 				<?php if (get_area() == "tools"): ?>
 				    
 				    <?php get_template_part('areapage-tools'); ?>
-				    
+				
+				<?php elseif (get_area() == "surface"): ?>
+				    <?php get_template_part('areapage-surface'); ?>
 				<?php else: ?>
 				
 				    <?php get_template_part('areapage-materials'); ?>
