@@ -126,9 +126,8 @@ function hybrid_theme_register_menus() {
 	register_nav_menu( 'area', __( 'Area Topmenu', hybrid_get_textdomain() ) );
 	register_nav_menu( 'general', __( 'General Topmenu', hybrid_get_textdomain() ) );
 	register_nav_menu( 'tools', __( 'Tools Topmenu', hybrid_get_textdomain() ) );
-	register_nav_menu( 'materials', __( 'Materials Topmenu', hybrid_get_textdomain() ) );
-	register_nav_menu( 'tools-footer', __('Tools footer menu', hybrid_get_textdomain()) );
-	register_nav_menu( 'materials-footer', __('Materials footer menu', hybrid_get_textdomain()) );	
+	register_nav_menu( 'materials', __( 'Materials Topmenu', hybrid_get_textdomain() ) );	
+	register_nav_menu( 'surface', __( 'Overfladebehandling Topmenu', hybrid_get_textdomain() ) );	
 }
 
 /**
