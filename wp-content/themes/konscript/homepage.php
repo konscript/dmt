@@ -16,9 +16,20 @@ get_header(); // Loads the header.php template. ?>
 						<div class="banner-button">Materialer</div>
 						<p>
 							<strong>Kategorier:</strong><br />
-							BRONZE, FILTERBRONZE,<br /> 
-							GLIDELEJER, OVERFLADE-<br />
-							BELÆGNING m.m.</p>						
+							BRONZE,<br />
+							FILTERBRONZE,<br /> 
+							GLIDELEJER, m.fl.
+						</p>						
+						</a>
+					</div>
+					<div id="banner-surface">
+						<a href="<?php echo get_bloginfo('siteurl'); ?>/overfladebehandling">
+						<div class="banner-button">Overfladebehandling</div>
+						<p>
+							<strong>Produkter:</strong><br />
+							NEDOX, TIXON,<br /> 
+							TUFRAM, YTOX,<br /> 
+							m.fl.</p>
 						</a>
 					</div>
 					<div id="banner-tools">
@@ -27,7 +38,7 @@ get_header(); // Loads the header.php template. ?>
 						<p>
 							<strong>Producenter:</strong><br />
 							FACOM, HITACHI,<br /> 
-							SKYDDA, SERENCO<br /> 
+							SKYDDA, SERENCO,<br /> 
 							m.fl.</p>
 						</a>
 					</div>

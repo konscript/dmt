@@ -277,7 +277,7 @@ body,
 			position: absolute;
 			border: 1px solid #949494;
 			padding: 10px 20px;
-			font-size: 2.5em; 
+			font-size: 2em; 
 			font-family: $customfont;
 			text-decoration: none;
 			color: #000;
@@ -312,50 +312,74 @@ body,
 			background-image: url('../../graphics/surface_banner-texture.png'); }
 
 		body.home #banner-materials {
-			@include column(12);
+			@include column(8);
 			position: relative;
 			background-image: url('../../graphics/home_materials-texture.png');
 			background-color: transparent;
 			background-position: left top;
 			box-shadow: none;
-			height: 275px; 
+			height: 187px; 
 			
 			.banner-button {
-				top: 30px;
-				right: 30px;
+				top: 15px;
+				right: 15px;
 				text-align: right; }
 				
 				p {
 					display: block;
 					position: absolute;
-					font-size: 13px;
-					top: 120px;
-					right: 30px;
+					font-size: 12px;
+					top: 80px;
+					right: 10px;
 					color: #000;
 					text-align: right; }
+			}
+
+		body.home #banner-surface {
+			@include column(8);
+			position: relative;
+			background-image: url('../../graphics/home_surface-texture.png');
+			background-color: transparent;
+			background-position: left top;
+			box-shadow: none;
+			height: 187px; 
+
+			.banner-button {
+				top: 15px;
+				right: 30px;
+				text-align: right; }
+
+				p {
+					display: block;
+					position: absolute;
+					font-size: 12px;
+					top: 80px;
+					left: 22px;
+					color: #000;
+					text-align: left; }
 			}
 			
 
 		body.home #banner-tools {
-			@include column(12, true);
+			@include column(8, true);
 			position: relative;		
 			background-image: url('../../graphics/home_tools-texture.png');
 			background-color: transparent;
 			background-position: left top;
 			box-shadow: none;
-			height: 275px;
+			height: 187px;
 			
 			.banner-button {
-				top: 30px;
-				left: 30px;
+				top: 15px;
+				left: 15px;
 				text-align: left; }
 				
 			p {
 				display: block;
 				position: absolute;
-				font-size: 13px;
-				top: 120px;
-				left: 30px;
+				font-size: 12px;
+				top: 80px;
+				left: 10px;
 				color: #000; }
 			}
 

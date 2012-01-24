@@ -15,7 +15,6 @@
 						Tlf. <?php dmt_company_info('phone'); ?> eller <a href="mailto:<?php dmt_company_info('email'); ?>"><?php dmt_company_info('email'); ?></a><br />
 						for bestilling og konsultation
 					</div>
-	    </div>	
-			Right column content goes here!
+	    </div>
     </div>
 </div>
