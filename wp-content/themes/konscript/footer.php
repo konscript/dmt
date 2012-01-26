@@ -16,6 +16,7 @@
 			<div id="footer-products">
 				<div class="footer-products-text">Se hvilke produkter vi udbyder indenfor:</div><br />
 				<a class="footer-button first" href="<?php echo get_bloginfo('siteurl'); ?>/materialer/produkter">Materialer</a>
+				<a class="footer-button" href="<?php echo get_bloginfo('siteurl'); ?>/product-categories/overfladebelaegninger/">Overfladebehandling</a>
 				<a class="footer-button" href="<?php echo get_bloginfo('siteurl'); ?>/vaerktoejer/vaerktoejer-produkter">Værktøj</a>
 			</div>
 			<div id="footer-info">
