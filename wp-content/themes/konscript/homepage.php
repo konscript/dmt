@@ -38,8 +38,8 @@ get_header(); // Loads the header.php template. ?>
 						<p>
 							<strong>Producenter:</strong><br />
 							FACOM, HITACHI,<br /> 
-							SKYDDA, SERENCO,<br /> 
-							m.fl.</p>
+							SKYDDA,<br /> 
+							SERENCO, m.fl.</p>
 						</a>
 					</div>
 				</div>
