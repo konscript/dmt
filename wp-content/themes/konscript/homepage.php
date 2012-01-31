@@ -15,10 +15,11 @@ get_header(); // Loads the header.php template. ?>
 						<a href="<?php echo get_bloginfo('siteurl'); ?>/materialer">
 						<div class="banner-button">Materialer</div>
 						<p>
-							<strong>Kategorier:</strong><br />
-							BRONZE,<br />
-							FILTERBRONZE,<br /> 
-							GLIDELEJER, m.fl.
+							Bronze,<br />
+							Filterbronze,<br /> 
+							Glidelejer,<br />
+							Metaller,<br />
+							m.fl.
 						</p>						
 						</a>
 					</div>
@@ -26,9 +27,10 @@ get_header(); // Loads the header.php template. ?>
 						<a href="<?php echo get_bloginfo('siteurl'); ?>/overfladebehandling">
 						<div class="banner-button">Overfladebehandling</div>
 						<p>
-							<strong>Produkter:</strong><br />
-							NEDOX, TIXON,<br /> 
-							TUFRAM, YTOX,<br /> 
+							Nedox, Tixon,<br /> 
+							Tufram, Ytox,<br /> 
+							Anodisering,<br />
+							Forkroming,<br />
 							m.fl.</p>
 						</a>
 					</div>
@@ -36,10 +38,11 @@ get_header(); // Loads the header.php template. ?>
 						<a href="<?php echo get_bloginfo('siteurl'); ?>/vaerktoejer">
 						<div class="banner-button">Værktøj</div>
 						<p>
-							<strong>Producenter:</strong><br />
-							FACOM, HITACHI,<br /> 
-							SKYDDA,<br /> 
-							SERENCO, m.fl.</p>
+							Facom,<br />
+							Hitachi,<br /> 
+							Skydda,<br /> 
+							Serenco,<br />
+							m.fl.</p>
 						</a>
 					</div>
 				</div>
