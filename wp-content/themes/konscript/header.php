@@ -33,6 +33,10 @@
 					<?php do_atomic( 'header' ); // hybrid_header ?>
 					<?php get_template_part( 'menu-general' ); ?>				
 					<div id="site-sponsors">
+						<a href="http://www.findsmiley.dk/da-DK/Searching/DetailsView.htm?virk=506740" target="_blank" style="width: 59px">
+							<img id="sponsor-logo-3-hover" class="sponsor-hover" title="Fødevarestyrelsens smiley-rapport" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-smiley-color.png" />
+							<img id="sponsor-logo-3" class="sponsor-idle" title="Fødevarestyrelsens smiley-rapport" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-smiley-gray.png" />
+						</a>
 						<a href="http://www.danskjern.dk/" target="_blank" style="width: 70px">
 							<img id="sponsor-logo-1-hover" class="sponsor-hover" title="Dansk Jerncentral" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-dj-color.png" />
 							<img id="sponsor-logo-1" class="sponsor-idle" title="Dansk Jerncentral" src="<?php echo get_bloginfo ('template_url'); ?>/graphics/sponsor-logo-dj-gray.png" />
